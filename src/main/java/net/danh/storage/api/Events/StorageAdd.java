@@ -18,7 +18,7 @@ public class StorageAdd extends StoragePlayerEvent {
      * @param name Name of storage that resources will be stored in
      * @param amount Amount of resources will be stored in
      * @param all Is this event add all or not
-     * @param inv Is this event take resuorces from iventory to
+     * @param inv Is this event take resources from inventory to
      * add or not
      */
     public StorageAdd(Player player, String name, Integer amount, Boolean all, Boolean inv) {
@@ -54,7 +54,7 @@ public class StorageAdd extends StoragePlayerEvent {
     }
 
     /**
-     * Get the status of add iventory mode
+     * Get the status of add inventory mode
      * @return True or false
      */
     public boolean isInv() {

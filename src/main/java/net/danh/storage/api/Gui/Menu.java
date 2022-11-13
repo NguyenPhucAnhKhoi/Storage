@@ -48,8 +48,8 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     boolean getUpdate();
 
     /**
-     * Get The duration of a update cycle
-     * @return Miliseconds
+     * Get The duration of an update cycle
+     * @return Milliseconds
      */
     long getUpdateTime();
 
@@ -78,25 +78,25 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     Icon[] getPIcons();
 
     /**
-     * Get the item stack aray of normal icons for load the gui
+     * Get the item stack array of normal icons for load the gui
      * @return Item stack array
      */
     ItemStack[] getNormal();
 
     /**
-     * Get the item stack aray of decorate icons for load the gui
+     * Get the item stack array of decorate icons for load the gui
      * @return Item stack array
      */
     ItemStack[] getDecorate();
 
     /**
-     * Get the item stack aray of papi icons for load the gui
+     * Get the item stack array of papi icons for load the gui
      * @return Item stack array
      */
     ItemStack[] getPapi();
 
     /**
-     * Get the item stack aray of button icons for load the gui
+     * Get the item stack array of button icons for load the gui
      * @return Item stack array
      */
     ItemStack[] getButton();

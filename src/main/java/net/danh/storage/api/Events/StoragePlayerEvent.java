@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This event will be called with event that cause by players
@@ -16,7 +17,7 @@ public class StoragePlayerEvent extends Event implements Cancellable {
 
     /**
      * Constructor method
-     * @param player Player cause this event
+     * @param player Player causes this event
      */
     public StoragePlayerEvent(Player player) {
         this.player = player;
@@ -44,6 +45,7 @@ public class StoragePlayerEvent extends Event implements Cancellable {
      * @return HandlerList
      */
     @Override
+    @NotNull
     public HandlerList getHandlers() {
         return HANDLERS;
     }

@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 public class EconomySet extends EconomyEvent {
     /**
      * Constructor method
-     * @param player Player cause this event
+     * @param player Player causes this event
      * @param amount Amount will be changed
      */
     public EconomySet(Player player, Long amount) {

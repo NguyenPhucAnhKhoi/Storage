@@ -6,14 +6,14 @@ import org.bukkit.entity.Player;
 public interface Economy {
     /**
      * Get the money this player has
-     * @param player Player to get informations
+     * @param player Player to get information
      * @return Amount of money as integer
      */
     long getMoney(Player player);
 
     /**
      * Set a custom amount money for this player
-     * @param player Player to get informations
+     * @param player Player to get information
      * @param amount Amount of money to set
      */
     void setMoney(Player player, Long amount);

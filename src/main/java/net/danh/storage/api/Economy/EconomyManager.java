@@ -1,7 +1,5 @@
 package net.danh.storage.api.Economy;
 
-import net.danh.storage.api.Database.Database;
-
 import java.util.List;
 
 @SuppressWarnings("unused")
@@ -40,6 +38,12 @@ public interface EconomyManager {
      * @return List of all economy
      */
     List<Economy> getRegistered();
+
+    /**
+     * Get list of name of registered economy
+     * @return List of name of all economy
+     */
+    List<String> getNames();
 
     /**
      * Get current economy in use

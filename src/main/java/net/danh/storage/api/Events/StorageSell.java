@@ -18,7 +18,7 @@ public class StorageSell extends StoragePlayerEvent {
      * @param name Name of storage that resources will be sold
      * @param amount Amount of resources will be sold
      * @param all Is this event sell all or not
-     * @param inv Is this event take resuorces from storage to
+     * @param inv Is this event take resources from storage to
      * sell or not
      */
     public StorageSell(Player player, String name, Integer amount, Boolean all, Boolean inv) {
@@ -54,7 +54,7 @@ public class StorageSell extends StoragePlayerEvent {
     }
 
     /**
-     * Get the status of sell iventory mode
+     * Get the status of sell inventory mode
      * @return True or false
      */
     public boolean isInv() {

@@ -18,7 +18,7 @@ public class StorageTake extends StoragePlayerEvent {
      * @param name Name of storage that resources will be taken in
      * @param amount Amount of resources will be taken in
      * @param all Is this event take all or not
-     * @param inv Is this event take resuorces from storage or not
+     * @param inv Is this event take resources from storage or not
      */
     public StorageTake(Player player, String name, Integer amount, Boolean all, Boolean inv) {
         super(player);
@@ -53,7 +53,7 @@ public class StorageTake extends StoragePlayerEvent {
     }
 
     /**
-     * Get the status of take iventory mode
+     * Get the status of take inventory mode
      * @return True or false
      */
     public boolean isInv() {

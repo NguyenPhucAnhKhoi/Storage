@@ -51,7 +51,7 @@ public class Action implements ActionExecute {
     }
 
     /**
-     * Take all resuorces from storage
+     * Take all resources from storage
      */
     public static class TakeAll extends Action implements ActionExecute {
         @Override
@@ -81,7 +81,7 @@ public class Action implements ActionExecute {
     }
 
     /**
-     * Add all resuorces from storage
+     * Add all resources from storage
      */
     public static class AddAll extends Action implements ActionExecute {
         @Override
@@ -111,12 +111,12 @@ public class Action implements ActionExecute {
     }
 
     /**
-     * Sell all resuorces from storage
+     * Sell all resources from storage
      */
     public static class SellAll extends Action implements ActionExecute {
         @Override
         public void run(Player player, String name) {
-            INSTANCE.selllAllStorage(player, name);
+            INSTANCE.sellAllStorage(player, name);
         }
     }
 }

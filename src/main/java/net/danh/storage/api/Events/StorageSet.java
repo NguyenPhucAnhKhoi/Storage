@@ -35,7 +35,7 @@ public class StorageSet extends StoragePlayerEvent {
 
     /**
      * Get the amount of this event
-     * @return Amount will be setted
+     * @return Amount will be set
      */
     public int getAmount() {
         return amount;

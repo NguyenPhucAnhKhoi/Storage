@@ -43,13 +43,13 @@ public interface PapiItemStack {
 
     /**
      * Set the durability of item this icon represent
-     * @param durability Durabilily to set
+     * @param durability Durability to set
      */
     void setDurability(String durability);
 
     /**
      * Get the durability of item this icon represent
-     * @return Durabilily as string
+     * @return Durability as string
      */
     String getDurability();
 

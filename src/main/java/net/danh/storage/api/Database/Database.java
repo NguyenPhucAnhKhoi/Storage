@@ -16,7 +16,7 @@ public interface Database {
 
     /**
      * Get the bukkit material this specific storage can store
-     * @param name Name of storage to get informations
+     * @param name Name of storage to get information
      * @return Bukkit material
      */
     Material getMaterial(String name);
@@ -82,7 +82,7 @@ public interface Database {
      * Set the max amount of this material (storage name) for this player
      * @param uuid Player's uuid
      * @param material Material (storage name)
-     * @param amount Max amount to set
+     * @param amount Max amounts to set
      */
     void setMax(String uuid, String material, Integer amount);
 
@@ -98,5 +98,5 @@ public interface Database {
      * @param uuid Player's uuid
      * @param status Status
      */
-    void setPikup(String uuid, Boolean status);
+    void setPickup(String uuid, Boolean status);
 }

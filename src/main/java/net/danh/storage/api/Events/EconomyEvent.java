@@ -11,7 +11,7 @@ public class EconomyEvent extends StoragePlayerEvent {
 
     /**
      * Constructor method
-     * @param player Player cause this event
+     * @param player Player causes this event
      * @param amount Amount will be changed
      */
     public EconomyEvent(Player player, Long amount) {

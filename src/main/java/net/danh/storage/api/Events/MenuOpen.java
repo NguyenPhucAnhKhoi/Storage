@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 public class MenuOpen extends MenuEvent {
     /**
      * Constructor method
-     * @param player Player cause this event
+     * @param player Player causes this event
      * @param menu Menu will be opened
      */
     public MenuOpen(Player player, Menu menu) {

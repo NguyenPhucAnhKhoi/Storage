@@ -43,6 +43,12 @@ public interface DatabaseManager {
     List<Database> getRegistered();
 
     /**
+     * Get list of name of registered databases
+     * @return List of name of all databases
+     */
+    List<String> getNames();
+
+    /**
      * Get current database in use
      * @return Using database
      */

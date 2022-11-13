@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 @SuppressWarnings("unused")
 public interface Command {
     /**
-     * The default execute for all of command sender
+     * The default execute for all command sender
      * @param sender The command sender
      * @param args Array of command arguments
      */

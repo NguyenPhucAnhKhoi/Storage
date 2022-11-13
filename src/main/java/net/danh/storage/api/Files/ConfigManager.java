@@ -21,7 +21,7 @@ public interface ConfigManager {
 
     /**
      * Get custom type value from config by class
-     * Get the neareast path if the path not found
+     * Get the nearest path if the path not found
      * @param <T> Type of value store in config
      * @param clazz Class of value to get
      * @param path Path to get value
@@ -41,20 +41,20 @@ public interface ConfigManager {
      * @param object Object to save
      * @param path Path to save object
      * @throws IllegalArgumentException Object
-     * need to implements serializable
+     * need to implement serializable
      */
     void encode(Class<? extends Serializable> object, String path) throws IllegalArgumentException;
 
     /**
      * Decode and return value store in this path if
-     * path is encode object
+     * path is encoding object
      * @param path Path to decode
      * @return The object after decode
      */
     Object decode(String path);
 
     /**
-     * Check if value store in this path is encode
+     * Check if value store in this path is encoding
      * or not
      * @param path Path to check
      * @return True or false

@@ -60,7 +60,7 @@ public interface Icon {
 
         /**
          * Set update status for this icon
-         * @param status True or flase
+         * @param status True or false
          */
         void setUpdate(Boolean status);
 
@@ -95,7 +95,7 @@ public interface Icon {
         String getName();
 
         /**
-         * The method to confirm type of icon (can not be ovveride)
+         * The method to confirm type of icon (can not be overridden)
          * @return Final type of icon
          */
         Type getType();
@@ -155,7 +155,7 @@ public interface Icon {
         int getSlot();
 
         /**
-         * The method to confirm type of icon (can not be ovveride)
+         * The method to confirm type of icon (can not be overridden)
          * @return Final type of icon
          */
         Type getType();
@@ -189,7 +189,7 @@ public interface Icon {
         int getSlot();
 
         /**
-         * The method to confirm type of icon (can not be ovveride)
+         * The method to confirm type of icon (can not be overridden)
          * @return Final type of icon
          */
         Type getType();
@@ -231,12 +231,12 @@ public interface Icon {
 
         /**
          * Set update status for this icon
-         * @param status True or flase
+         * @param status True or false
          */
         void setUpdate(Boolean status);
 
         /**
-         * The method to confirm type of icon (can not be ovveride)
+         * The method to confirm type of icon (can not be overridden)
          * @return Final type of icon
          */
         Type getType();
@@ -301,7 +301,7 @@ public interface Icon {
         DOUBLE_CLICK,
 
         /**
-         * Press the off hand switch button (default is F)
+         * Press the offhand switch button (default is F)
          */
         SWAP_OFFHAND,
 
@@ -351,7 +351,7 @@ public interface Icon {
         NUMBER_9,
 
         /**
-         * Press middle click (Scrollwheel click) [Untested]
+         * Press middle click (Scroll-wheel click) [Untested]
          */
         @SuppressWarnings("untested")
         MIDDLE,

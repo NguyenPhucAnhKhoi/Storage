@@ -41,67 +41,67 @@ public interface StorageAPI {
 
     /**
      * Set custom default menu for all players
-     * @param menu Menu will be setted as default
+     * @param menu Menu will be set as default
      */
     void setDefaultMenu(Menu menu);
 
     /**
      * Set custom default menu for specific player
      * @param player Player to set default menu
-     * @param menu Menu will be setted as default
+     * @param menu Menu will be set as default
      */
     void setPlayerMenu(Player player, Menu menu);
 
     /**
      * Get Material of resources this storage store
-     * @param name Name of storage to get informations
+     * @param name Name of storage to get information
      * @return Bukkit Material
      */
     Material getMaterial(String name);
 
     /**
      * Get the amount used space of this storage
-     * @param player Player to get informations
-     * @param name Name of storage to get informations
+     * @param player Player to get information
+     * @param name Name of storage to get information
      * @return Amount as integer
      */
     int getStorage(Player player, String name);
 
     /**
      * Get the percent used space of this storage
-     * @param player Player to get informations
-     * @param name Name of storage to get informations
+     * @param player Player to get information
+     * @param name Name of storage to get information
      * @return Percent as integer
      */
     int getStoragePercent(Player player, String name);
 
     /**
      * Get the amount remaining empty space of this storage
-     * @param player Player to get informations
-     * @param name Name of storage to get informations
+     * @param player Player to get information
+     * @param name Name of storage to get information
      * @return Amount as integer
      */
     int getEmpty(Player player, String name);
 
     /**
      * Get the percent remaining empty space of this storage
-     * @param player Player to get informations
-     * @param name Name of storage to get informations
+     * @param player Player to get information
+     * @param name Name of storage to get information
      * @return Percent as integer
      */
     int getEmptyPercent(Player player, String name);
 
     /**
      * Get max amount of resources this storage can store
-     * @param player Player to get informations
-     * @param name Name of storage to get informations
+     * @param player Player to get information
+     * @param name Name of storage to get information
      * @return Amount as integer
      */
     int getMaxStorage(Player player, String name);
 
     /**
      * Set custom amount resources for this player storage
-     * @param player Player will be setted
+     * @param player Player will be set
      * @param name Name of storage to set
      * @param amount Amount to set
      */
@@ -179,11 +179,11 @@ public interface StorageAPI {
      * @param player Player will be sold resources
      * @param name Name of storage to sell all
      */
-    void selllAllStorage(Player player, String name);
+    void sellAllStorage(Player player, String name);
 
     /**
      * Set custom amount max space for this player
-     * @param player Player will be setted
+     * @param player Player will be set
      * @param name Name of storage to set
      * @param amount Amount to set
      */
@@ -207,35 +207,35 @@ public interface StorageAPI {
 
     /**
      * Get amount of the total all storages used space
-     * @param player Player to get informations
+     * @param player Player to get information
      * @return Amount as integer
      */
     int getTStorage(Player player);
 
     /**
-     * Get amount of the total all storages max space
-     * @param player Player to get informations
+     * Get amount of the total all storages' max space
+     * @param player Player to get information
      * @return Amount as integer
      */
     int getTMaxStorage(Player player);
 
     /**
      * Get amount of the total  all storages remaining space
-     * @param player Player to get informations
+     * @param player Player to get information
      * @return Amount as integer
      */
     int getTEmpty(Player player);
 
     /**
      * Get the percent of total all storages used space
-     * @param player Player to get informations
+     * @param player Player to get information
      * @return Percent as integer
      */
     int getTStoragePercent(Player player);
 
     /**
      * Get the percent of total all storages remaining empty space
-     * @param player Player to get informations
+     * @param player Player to get information
      * @return Percent as integer
      */
     int getTEmptyPercent(Player player);
@@ -256,14 +256,14 @@ public interface StorageAPI {
 
     /**
      * Set auto smelt mode for this player
-     * @param player Player will be setted
+     * @param player Player will be set
      * @param status True or false
      */
     void setSmelt(Player player, Boolean status);
 
     /**
      * Set auto pickup mode for this player
-     * @param player Player will be setted
+     * @param player Player will be set
      * @param status True or false
      */
     void setPickup(Player player, Boolean status);
@@ -275,29 +275,29 @@ public interface StorageAPI {
     List<Player> getPlayers();
 
     /**
-     * Check if server have plugin PlahceholderAPI or not
+     * Check if server have plugin PlaceholderAPI or not
      * @return True or false
      */
     boolean getPapiStatus();
 
     /**
-     * Calculate the amount of resource recieve by the material and fortune level
+     * Calculate the amount of resource receive by the material and fortune level
      * @param level Level of fortune enchantment
      * @param material Material to calculate
-     * @return Amount of resource will be recieved as integer
+     * @return Amount of resource will be received as integer
      */
     int vanillaFortune(int level, Material material);
 
     /**
      * Send action bar message to player
-     * @param player Player will be recieved action bar
+     * @param player Player will be received action bar
      * @param message Message will be sent
      */
     void sendActionbar(Player player, String message);
 
     /**
      * Send title message to player
-     * @param player Player will be recieved title
+     * @param player Player will be received title
      * @param message Message will be sent
      * @param subMessage Sub message will be sent
      * @param fadeIn Time the title fade in
@@ -399,7 +399,7 @@ public interface StorageAPI {
      * Create new icon instance with custom material, amount and damage
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
-     * @param damage Danage as short to create
+     * @param damage Damage as short to create
      * @return New icon was created
      */
     Icon createIcon(Material material, Integer amount, Short damage);

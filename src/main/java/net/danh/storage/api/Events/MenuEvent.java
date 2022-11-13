@@ -12,7 +12,7 @@ public class MenuEvent extends StoragePlayerEvent {
 
     /**
      * Constructor method
-     * @param player Player cause this event
+     * @param player Player causes this event
      */
     public MenuEvent(Player player, Menu menu) {
         super(player);

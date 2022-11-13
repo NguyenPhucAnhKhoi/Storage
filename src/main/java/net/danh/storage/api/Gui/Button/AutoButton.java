@@ -41,19 +41,19 @@ public interface AutoButton extends Icon.Button {
 
     /**
      * Set the normal Papi ItemStack by the status of auto mode
-     * @param item PlaceholderAPI ItemStack will be setted
-     * @param stautus Status of auto mode to set
+     * @param item PlaceholderAPI ItemStack will be set
+     * @param status Status of auto mode to set
      * @param type Type of auto mode to set
      */
-    void setNormalItem(ItemStack item, Boolean stautus, AutoType type);
+    void setNormalItem(ItemStack item, Boolean status, AutoType type);
 
     /**
      * Set the cooldown Papi ItemStack by the status of auto mode
-     * @param item PlaceholderAPI ItemStack will be setted
-     * @param stautus Status of auto mode to set
+     * @param item PlaceholderAPI ItemStack will be set
+     * @param status Status of auto mode to set
      * @param type Type of auto mode to set
      */
-    void setCooldownItem(ItemStack item, Boolean stautus, AutoType type);
+    void setCooldownItem(ItemStack item, Boolean status, AutoType type);
 
     /**
      * Check if this status of auto mode is cooldown or not

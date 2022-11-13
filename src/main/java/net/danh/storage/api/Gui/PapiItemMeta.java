@@ -97,7 +97,7 @@ public interface PapiItemMeta {
     List<String> getItemFlags();
 
     /**
-     * Set the item flags of item that icon represent
+     * Set the item flags of item that icon represents
      * Syntax: "Item_Flag"
      * @param itemFlags Item flags to set
      */
@@ -116,7 +116,7 @@ public interface PapiItemMeta {
     String getUnbreakable();
 
     /**
-     * Set the unbreakable status of item that icon represent
+     * Set the unbreakable status of item that icon represents
      * Syntax: "True" or "False"
      * @param unbreakable Unbreakable status to set
      */
@@ -135,14 +135,14 @@ public interface PapiItemMeta {
     boolean isPotionMeta();
 
     /**
-     * Get potion color of item that icon represent
+     * Get potion color of item that icon represents
      * Only available if this class instance of PotionMeta
      * @return Potion color as string
      */
     String getPotion_Color();
 
     /**
-     * Set the potion color of item that icon represent
+     * Set the potion color of item that icon represents
      * Only available if this class instance of PotionMeta
      * Syntax: "Potion_Color"
      * @param potion_color Potion color to set
@@ -157,14 +157,14 @@ public interface PapiItemMeta {
     boolean potionColorHasPapi();
 
     /**
-     * Get potion effects of item that icon represent
+     * Get potion effects of item that icon represents
      * Only available if this class instance of PotionMeta
      * @return Potion effects as string
      */
     String getPotion_Effects();
 
     /**
-     * Set the potion effects of item that icon represent
+     * Set the potion effects of item that icon represents
      * Only available if this class instance of PotionMeta
      * Syntax: "PotionEffectType" or "PotionEffectType;Duration"
      * or "PotionEffectType;Duration;Level"
@@ -186,16 +186,16 @@ public interface PapiItemMeta {
     boolean isBannerMeta();
 
     /**
-     * Get banner meta of item that icon represent
+     * Get banner meta of item that icon represents
      * Only available if this class instance of BannerMeta
      * @return Banner Meta as string
      */
     String getBannerMeta();
 
     /**
-     * Set the banner meta of item that icon represent
+     * Set the banner meta of item that icon represents
      * Only available if this class instance of BannerMeta
-     * Syntax: "Dyecolor;Patterntype"
+     * Syntax: "Dye-color;Pattern-type"
      * @param bannerMeta Banner Meta to set
      */
     void setBannerMeta(String bannerMeta);
