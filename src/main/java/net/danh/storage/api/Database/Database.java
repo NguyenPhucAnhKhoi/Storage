@@ -1,8 +1,10 @@
 package net.danh.storage.api.Database;
 
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Developers can use this class to create their own custom database
@@ -22,81 +24,81 @@ public interface Database {
     Material getMaterial(String name);
 
     /**
-     * This method will be called when server start. Use it to set
-     * up your custom database.
+     * Initialize storage with names and materials
+     * @param data The names correspond to the ingredients
      */
-    void initialize();
+    void initialize(Map<String, Material> data);
 
     /**
      * Get amount of material (storage name) player has
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param material Material (storage name)
      * @return Amount of material
      */
-    int getAmount(String uuid, String material);
+    int getAmount(Player player, String material);
 
     /**
      * Get max amount of material (storage name) player has
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param material Material (storage name)
      * @return Max amount of material
      */
-    int getMax(String uuid, String material);
+    int getMax(Player player, String material);
 
     /**
      * Get auto smelt status of player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @return Status auto smelt
      */
-    boolean getSmelt(String uuid);
+    boolean getSmelt(Player player);
 
     /**
      * Get auto pickup status of player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @return Status auto pickup
      */
-    boolean getPickup(String uuid);
+    boolean getPickup(Player player);
 
     /**
      * Get the list contains all uuids store in database
      * @return The uuid list
      */
-    List<String> getUUIDS();
+    List<Player> getPlayers();
 
     /**
      * Get the list contains materials store in this uuid
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @return the material list
      */
-    List<String> getMaterials(String uuid);
+    List<String> getMaterials(Player player);
 
     /**
      * Set the amount of this material (storage name) for this player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param material Material (storage name)
      * @param amount Amount to set
      */
-    void setAmount(String uuid, String material, Integer amount);
+    void setAmount(Player player, String material, Integer amount);
 
     /**
      * Set the max amount of this material (storage name) for this player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param material Material (storage name)
      * @param amount Max amounts to set
      */
-    void setMax(String uuid, String material, Integer amount);
+    void setMax(Player player, String material, Integer amount);
 
     /**
      * Set the status of smelt for this player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param status Status
      */
-    void setSmelt(String uuid, Boolean status);
+    void setSmelt(Player player, Boolean status);
 
     /**
      * Set the status of pickup for this player
-     * @param uuid Player's uuid
+     * @param player Player to get information
      * @param status Status
      */
-    void setPickup(String uuid, Boolean status);
+    void setPickup(Player player, Boolean status);
 }
