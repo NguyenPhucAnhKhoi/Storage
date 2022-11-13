@@ -4,12 +4,8 @@ import net.danh.storage.api.Database.Database;
 import net.danh.storage.api.Database.DatabaseManager;
 import net.danh.storage.api.Economy.Economy;
 import net.danh.storage.api.Economy.EconomyManager;
-import net.danh.storage.api.Events.StorageAdd;
 import net.danh.storage.api.Utils.InputCatcher;
 import org.bukkit.Bukkit;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class link plugin and api
@@ -27,7 +23,7 @@ public final class Storage {
     private static DatabaseManager database;
 
     /**
-     * Econo Manager initialized
+     * Economy Manager initialized
      */
     private static EconomyManager economy;
 
@@ -50,7 +46,7 @@ public final class Storage {
 
 
     /**
-     * Initalize default databases and economy (System only)
+     * Initialize default databases and economy (System only)
      * @param sqlite Sqlite instance
      * @param vault Vault instance
      * @param player_points Player Points instance
@@ -120,14 +116,16 @@ public final class Storage {
      * @param vault Default Vault Economy
      * @param points Default Player Points Economy
      * @param tokens Default Tokens Economy
-     * @param sqlite Default SQlite Database
+     * @param sqlite Default SQLite Database
      */
     public static void initialize(StorageAPI api, InputCatcher catcher, DatabaseManager database, EconomyManager economy, Economy vault, Economy points, Economy tokens, Database sqlite) {
         if (Bukkit.getPluginManager().getPlugin("Storage") != null) {
-            setStorageAPI(api);
-            setInputCatcher(catcher);
-            setDatabaseManager(database);
-            initializeDefault(sqlite, vault, points, tokens);
+            if (!isInitialized()) {
+                setStorageAPI(api);
+                setInputCatcher(catcher);
+                setDatabaseManager(database);
+                initializeDefault(sqlite, vault, points, tokens);
+            } else throw new UnsupportedOperationException("Can not to initialize StorageAPI again");
         } else throw new UnsupportedOperationException("Can not find plugin Storage to setup API");
     }
 
@@ -168,7 +166,7 @@ public final class Storage {
     }
 
     /**
-     * Get dababase manager instance
+     * Get database manager instance
      * @return Instance of DatabaseManager
      */
     public static DatabaseManager getDatabaseManager() {
