@@ -1,6 +1,7 @@
 package net.danh.storage.api.Database;
 
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -63,7 +64,7 @@ public interface Database {
      * Get the list contains all uuids store in database
      * @return The uuid list
      */
-    List<Player> getPlayers();
+    List<OfflinePlayer> getPlayers();
 
     /**
      * Get the list contains materials store in this uuid
