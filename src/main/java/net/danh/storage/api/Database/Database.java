@@ -105,6 +105,7 @@ public interface Database {
 
     /**
      * Run code for this database when plugin is reloading
+     * @param newData The new names correspond to the ingredients
      */
-    void onReload();
+    void onReload(Map<String, Material> newData);
 }
