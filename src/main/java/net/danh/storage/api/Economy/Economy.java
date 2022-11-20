@@ -37,4 +37,9 @@ public interface Economy {
      * @return Unique Name
      */
     String getName();
+
+    /**
+     * Run code for this economy when plugin is reloading
+     */
+    void onReload();
 }

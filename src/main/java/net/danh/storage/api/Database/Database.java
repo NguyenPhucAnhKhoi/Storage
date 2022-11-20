@@ -101,4 +101,9 @@ public interface Database {
      * @param status Status
      */
     void setPickup(Player player, Boolean status);
+
+    /**
+     * Run code for this database when plugin is reloading
+     */
+    void onReload();
 }
