@@ -73,4 +73,9 @@ public interface ConfigManager {
      * @return Bukkit yaml config
      */
     YamlConfiguration getConfigFile();
+
+    /**
+     * Reload the config file
+     */
+    void reload();
 }
