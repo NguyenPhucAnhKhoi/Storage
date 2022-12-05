@@ -5,7 +5,7 @@ import org.bukkit.Material;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public interface ConfigBlock {
+public interface BlockSection {
     /**
      * Get the name of this config block section
      * @return Original name (with unconverted color code)

@@ -3,6 +3,7 @@ package net.danh.storage.api;
 import net.danh.storage.api.Command.Command;
 import net.danh.storage.api.Database.Database;
 import net.danh.storage.api.Files.ConfigManager;
+import net.danh.storage.api.Files.FilesManager;
 import net.danh.storage.api.Gui.Icon;
 import net.danh.storage.api.Gui.LoadOptions;
 import net.danh.storage.api.Gui.Menu;
@@ -409,19 +410,25 @@ public interface StorageAPI {
      * @param path Path of file to create
      * @return New config manager was created
      */
-    ConfigManager createConfig(String path);
+    FilesManager createConfig(String path);
 
     /**
      * Create new config manager with io file
      * @param file Java io file to create
      * @return New config manager was created
      */
-    ConfigManager createConfig(File file);
+    FilesManager createConfig(File file);
 
     /**
      * Create new config manager with bukkit yaml config file
      * @param config Bukkit yaml config file to create
      * @return New config manager was created
      */
-    ConfigManager createConfig(YamlConfiguration config);
+    FilesManager createConfig(YamlConfiguration config);
+
+    /**
+     * Get the config manager instance of this plugin
+     * @return Config manager
+     */
+    ConfigManager getConfigManager();
 }

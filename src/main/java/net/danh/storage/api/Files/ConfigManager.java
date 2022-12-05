@@ -1,81 +1,119 @@
 package net.danh.storage.api.Files;
 
-import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.Material;
 
-import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
-/**
- * This class use to manager data from yaml config
- */
 @SuppressWarnings("unused")
 public interface ConfigManager {
     /**
-     * Get custom type value from config by class
-     * @param <T> Type of value store in config
-     * @param path Path to get value
-     * @param clazz Class of value to get
-     * @return Value store in config
+     * Get the current blocks map of this manager
+     * @return Map contains all blocks
      */
-    <T> T get(Class<T> clazz, String path);
+    Map<String, BlockSection> getBlocks();
 
     /**
-     * Get custom type value from config by class
-     * Get the nearest path if the path not found
-     * @param <T> Type of value store in config
-     * @param clazz Class of value to get
-     * @param path Path to get value
-     * @return Value store in config
+     * Set the current blocks map for this manager
+     * @param blocks Map blocks to set
      */
-    <T> T getMatch(Class<T> clazz, String path);
+    void setBlocks(Map<String, BlockSection> blocks);
 
     /**
-     * Get the path nearest this path exist in config file
-     * @param path Path to compare nearest
-     * @return Another path
+     * Merge map blocks of this manager to config file
+     * Note: It will change the data stored in config
+     * so make sure you want to merge
      */
-    String getNearPath(String path);
+    void mergeFromConfig();
 
     /**
-     * Encode and save object as a byte array
-     * @param object Object to save
-     * @param path Path to save object
-     * @throws IllegalArgumentException Object
-     * need to implement serializable
+     * Load map blocks from config to this manager
+     * Note: It will replace the map blocks stored in
+     * this manager so make sure you want to merge
      */
-    void encode(Class<? extends Serializable> object, String path) throws IllegalArgumentException;
+    void mergeToConfig();
 
     /**
-     * Decode and return value store in this path if
-     * path is encoding object
-     * @param path Path to decode
-     * @return The object after decode
+     * Get the block name of a block section
+     * @param block Block section to get
+     * @return Name as String
      */
-    Object decode(String path);
+    String getName(BlockSection block);
 
     /**
-     * Check if value store in this path is encoding
-     * or not
-     * @param path Path to check
-     * @return True or false
+     * Get the block name by material
+     * @param material Bukkit material to get
+     * @return Name as String
      */
-    boolean isEncode(String path);
+    String getName(Material material);
 
     /**
-     * Get the default type that bukkit config
-     * support
-     * @return List contains class types
+     * Get the block names by material
+     * @param material Bukkit material to get
+     * @return Name as List String
      */
-    List<Class<?>> getDefaultTypes();
+    List<String> getNames(Material material);
 
     /**
-     * Get the config file this class represent
-     * @return Bukkit yaml config
+     * Get the block section by name
+     * @param name Name to get
+     * @return Block Section
      */
-    YamlConfiguration getConfigFile();
+    BlockSection getBlockSection(String name);
 
     /**
-     * Reload the config file
+     * Get the bukkit material by name
+     * @param name Name to get
+     * @return Bukkit material
      */
-    void reload();
+    Material getConvert(String name);
+
+    /**
+     * Get the bukkit materials by name
+     * @param name Name to get
+     * @return List Bukkit material
+     */
+    List<Material> getConverts(String name);
+
+    /**
+     * Get the price of block by block section
+     * @param block Block section to get
+     * @return Price as Long
+     */
+    Long getPrice(BlockSection block);
+
+    /**
+     * Get the price of block by name
+     * @param name Name to get
+     * @return Price as Long
+     */
+    Long getPrice(String name);
+
+    /**
+     * Get the block material by name
+     * @param name Name to get
+     * @return Bukkit material
+     */
+    Material getBlock(String name);
+
+    /**
+     * Get the block material by block section
+     * @param block Block section to get
+     * @return Bukkit material
+     */
+    Material getBlock(BlockSection block);
+
+    /**
+     * Get the block materials by name
+     * @param name Name to get
+     * @return List Bukkit material
+     */
+    List<Material> getBlocks(String name);
+
+    /**
+     * Get the block materials by block section
+     * @param block Block section to get
+     * @return List Bukkit material
+     */
+    List<Material> getBlocks(BlockSection block);
 }
