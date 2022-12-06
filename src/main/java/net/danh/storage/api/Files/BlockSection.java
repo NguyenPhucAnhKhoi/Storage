@@ -41,7 +41,7 @@ public interface BlockSection {
      * Set the new price of this config block section
      * @param price New price to reprice
      */
-    void setPrice(int price);
+    void setPrice(long price);
 
     /**
      * Set the convert material of this config block section
