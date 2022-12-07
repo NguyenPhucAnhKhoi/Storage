@@ -45,7 +45,7 @@ public class BlockPair {
      * Get the amount store in this pair
      * @return Amount as integer
      */
-    int getAmount() {
+    public int getAmount() {
         return this.amount;
     }
 
@@ -53,7 +53,7 @@ public class BlockPair {
      * Get the bukkit material store in this pair
      * @return Bukkit material
      */
-    Material getMaterial() {
+    public Material getMaterial() {
         return this.material;
     }
 
@@ -61,7 +61,7 @@ public class BlockPair {
      * Set the amount store in this pair
      * @param amount Amount to set
      */
-    void setAmount(int amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -69,7 +69,16 @@ public class BlockPair {
      * Set the material store in this pair
      * @param material Bukkit material to set
      */
-    void setMaterial(Material material) {
+    public void setMaterial(Material material) {
         this.material = material;
+    }
+
+    /**
+     * Override the to string method by object class
+     * @return Object to string
+     */
+    @Override
+    public String toString() {
+        return this.material.toString() + ";" + this.amount;
     }
 }
