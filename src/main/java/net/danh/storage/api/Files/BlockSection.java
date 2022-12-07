@@ -32,7 +32,7 @@ public class BlockSection {
      * Get the name of this config block section
      * @return Original name (with unconverted color code)
      */
-    String getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -40,7 +40,7 @@ public class BlockSection {
      * Get the price of this config block section
      * @return Price as long
      */
-    Long getPrice() {
+    public Long getPrice() {
         return price;
     }
 
@@ -48,7 +48,7 @@ public class BlockSection {
      * Get the material this config block will convert into
      * @return The bukkit material
      */
-    Material getConvert() {
+    public Material getConvert() {
         return convert;
     }
 
@@ -57,7 +57,7 @@ public class BlockSection {
      * block section
      * @return The list of block pair
      */
-    List<BlockPair> getBlocks() {
+    public List<BlockPair> getBlocks() {
         return blocks;
     }
 
@@ -65,7 +65,7 @@ public class BlockSection {
      * Set the new name of this config block section
      * @param name New name to rename
      */
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -73,7 +73,7 @@ public class BlockSection {
      * Set the new price of this config block section
      * @param price New price to reprice
      */
-    void setPrice(long price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -81,7 +81,7 @@ public class BlockSection {
      * Set the convert material of this config block section
      * @param material Bukkit material to set
      */
-    void setConvert(Material material) {
+    public void setConvert(Material material) {
         this.convert = material;
     }
 
@@ -90,7 +90,7 @@ public class BlockSection {
      * block section
      * @param materials Bukkit materials list
      */
-    void setBlocks(List<BlockPair> materials) {
+    public void setBlocks(List<BlockPair> materials) {
         this.blocks = materials;
     }
 }
