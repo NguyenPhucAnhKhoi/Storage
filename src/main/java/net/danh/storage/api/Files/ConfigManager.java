@@ -5,6 +5,9 @@ import org.bukkit.Material;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class use to manager config.yml file
+ */
 @SuppressWarnings("unused")
 public interface ConfigManager {
     /**
@@ -62,18 +65,18 @@ public interface ConfigManager {
     BlockSection getBlockSection(String name);
 
     /**
-     * Get the bukkit material by name
-     * @param name Name to get
-     * @return Bukkit material
-     */
-    Material getConvert(String name);
-
-    /**
      * Get the bukkit material by block section
      * @param block Block section to get
      * @return Bukkit material
      */
     Material getConvert(BlockSection block);
+
+    /**
+     * Get the bukkit material by name
+     * @param name Name to get
+     * @return Bukkit material
+     */
+    Material getConvert(String name);
 
     /**
      * Get the price of block by block section
@@ -88,6 +91,48 @@ public interface ConfigManager {
      * @return Price as Long
      */
     Long getPrice(String name);
+
+    /**
+     * Get the block pair by name
+     * @param name Name to get
+     * @return Block pair
+     */
+    BlockPair getPair(String name);
+
+    /**
+     * Get the block pair by block section
+     * @param block Block section to get
+     * @return Block pair
+     */
+    BlockPair getPair(BlockSection block);
+
+    /**
+     * Get block pairs by name
+     * @param name Name to get
+     * @return Block pair
+     */
+    List<BlockPair> getPairs(String name);
+
+    /**
+     * Get the block pairs by block section
+     * @param block Block section to get
+     * @return Block pair
+     */
+    List<BlockPair> getPairs(BlockSection block);
+
+    /**
+     * Get the amount by name
+     * @param name Name to get
+     * @return Amount as integer
+     */
+    int getAmount (String name);
+
+    /**
+     * Get the amount by block section
+     * @param block Block section to get
+     * @return Amount as integer
+     */
+    int getAmount(BlockSection block);
 
     /**
      * Get the block material by name
