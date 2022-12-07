@@ -69,11 +69,11 @@ public interface ConfigManager {
     Material getConvert(String name);
 
     /**
-     * Get the bukkit materials by name
-     * @param name Name to get
-     * @return List Bukkit material
+     * Get the bukkit material by block section
+     * @param block Block section to get
+     * @return Bukkit material
      */
-    List<Material> getConverts(String name);
+    Material getConvert(BlockSection block);
 
     /**
      * Get the price of block by block section
