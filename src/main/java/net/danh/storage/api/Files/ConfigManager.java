@@ -125,14 +125,14 @@ public interface ConfigManager {
      * @param name Name to get
      * @return Amount as integer
      */
-    int getAmount (String name);
+    int getAmount (String name, Material material);
 
     /**
      * Get the amount by block section
      * @param block Block section to get
      * @return Amount as integer
      */
-    int getAmount(BlockSection block);
+    int getAmount(BlockSection block, Material material);
 
     /**
      * Get the block material by name
