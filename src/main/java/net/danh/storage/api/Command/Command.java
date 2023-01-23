@@ -8,6 +8,12 @@ import org.bukkit.command.CommandSender;
 @SuppressWarnings("unused")
 public interface Command {
     /**
+     * Get identifier name of this command
+     * @return Command identifier name
+     */
+    String getCommand();
+
+    /**
      * The default execute for all command sender
      * @param sender The command sender
      * @param args Array of command arguments

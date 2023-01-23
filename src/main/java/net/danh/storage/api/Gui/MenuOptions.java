@@ -4,7 +4,7 @@ package net.danh.storage.api.Gui;
  * This class use to custom options for Menu Loader
  */
 @SuppressWarnings("unused")
-public class LoadOptions {
+public class MenuOptions {
     private String name = "name";
     private String material = "material";
     private String data = "data";
@@ -22,7 +22,7 @@ public class LoadOptions {
     /**
      * Constructor method
      */
-    public LoadOptions() {}
+    public MenuOptions() {}
 
     /**
      * @return Name syntax

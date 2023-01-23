@@ -4,8 +4,9 @@ import net.danh.storage.api.Command.Command;
 import net.danh.storage.api.Database.Database;
 import net.danh.storage.api.Files.ConfigManager;
 import net.danh.storage.api.Files.FilesManager;
+import net.danh.storage.api.Gui.Action.Action;
 import net.danh.storage.api.Gui.Icon;
-import net.danh.storage.api.Gui.LoadOptions;
+import net.danh.storage.api.Gui.MenuOptions;
 import net.danh.storage.api.Gui.Menu;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -21,13 +22,26 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface StorageAPI {
     /**
+     * Get the default actions of this plugin
+     * @return List of actions
+     */
+    List<Action> getDefaultActions();
+
+    /**
      * Load custom menu from a file config and by path
-     * @param path Path to load menu
      * @param config Config file to load menu
      * @param options Options of loader
      * @return Menu was loaded
      */
-    Menu loadMenu(String path, YamlConfiguration config, LoadOptions options);
+    Menu loadMenu(YamlConfiguration config, MenuOptions options);
+
+    /**
+     * Paste the specific menu to a config file
+     * @param config Config file to paste
+     * @param options Options of paster
+     * @param menu Menu will be pasted
+     */
+    void pasteMenu(YamlConfiguration config, MenuOptions options, Menu menu);
 
     /**
      * Get custom default menu for all players
@@ -306,37 +320,6 @@ public interface StorageAPI {
      * @param fadeOut Time the title fade out
      */
     void sendTitle(Player player, String message, String subMessage, Integer fadeIn, Integer stay, Integer fadeOut);
-
-    /**
-     * Register custom database
-     * @param database Database to register
-     */
-    void register(Database database);
-
-    /**
-     * Unregister custom command
-     * @param command Command to unregister
-     * @param name Unique name of custom command
-     * if it duplicates this will be replaced
-     */
-    void unRegister(Command command, String name);
-
-    /**
-     * Unregister custom command with specific name
-     * @param name Name of command to unregister
-     */
-    void unRegister(String name);
-
-    /**
-     * Unregister all registered commands
-     */
-    void unRegisterAll();
-
-    /**
-     * Get list of registered commands
-     * @return List of all commands
-     */
-    List<Command> getRegistered();
 
     /**
      * Create new menu instance

@@ -1,9 +1,11 @@
 package net.danh.storage.api.Gui;
 
+import net.danh.storage.api.Gui.Action.Action;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * This class represent item stack contain in inventory (menu)
@@ -33,24 +35,24 @@ public interface Icon {
         PapiItemStack getItem();
 
         /**
-         * The hashmap contains click and action execute
+         * The hashmap contains click and actions will be executed
          * for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, Action> getActions();
+        HashMap<Click, List<Action>> getActions();
 
         /**
          * Set actions will be executed for this click
          * @param click Click to set
-         * @param action Action will be executed
+         * @param action Actions will be executed
          */
-        void setAction(Click click, Action action);
+        void setAction(Click click, List<Action> action);
 
         /**
-         * Set the hashmap contains click and action execute
+         * Set the hashmap contains click and actions will be executed
          * @param actions Hashmap of actions and clicks
          */
-        void setAction(HashMap<Click, Action> actions);
+        void setAction(HashMap<Click, List<Action>> actions);
 
         /**
          * Executed instantly actions by this click
@@ -117,24 +119,24 @@ public interface Icon {
         ItemStack getItem();
 
         /**
-         * The hashmap contains click and action execute
+         * The hashmap contains click and actions will be executed
          * for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, Action> getActions();
+        HashMap<Click, List<Action>> getActions();
 
         /**
          * Set actions will be executed for this click
          * @param click Click to set
-         * @param action Action will be executed
+         * @param action Actions will be executed
          */
-        void setAction(Click click, Action action);
+        void setAction(Click click, List<Action> action);
 
         /**
          * Set the hashmap contains click and action execute
          * @param actions Hashmap of actions and clicks
          */
-        void setAction(HashMap<Click, Action> actions);
+        void setAction(HashMap<Click, List<Action>> actions);
 
         /**
          * Executed instantly actions by this click
@@ -206,11 +208,11 @@ public interface Icon {
         int getSlot();
 
         /**
-         * The hashmap contains click and action execute
+         * The hashmap contains click and actions will be execute
          * for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, Action> getActions();
+        HashMap<Click, List<Action>> getActions();
 
         /**
          * Get the item that icon represent
@@ -264,32 +266,8 @@ public interface Icon {
          */
         PAPI
     }
+
     enum Click {
-        /**
-         * Left click (normal click)
-         */
-        LEFT,
-
-        /**
-         * Press left click while holding shift
-         */
-        SHIFT_LEFT,
-
-        /**
-         * Right click
-         */
-        RIGHT,
-
-        /**
-         * Press right click while holding shift
-         */
-        SHIFT_RIGHT,
-
-        /**
-         * Press key drop (default is Q)
-         */
-        DROP,
-
         /**
          * Press key drop while holding control
          */
@@ -301,9 +279,20 @@ public interface Icon {
         DOUBLE_CLICK,
 
         /**
-         * Press the offhand switch button (default is F)
+         * Press key drop (default is Q)
          */
-        SWAP_OFFHAND,
+        DROP,
+
+        /**
+         * Left click (normal click)
+         */
+        LEFT,
+
+        /**
+         * Press middle click (Scroll-wheel click) [Untested]
+         */
+        @SuppressWarnings("untested")
+        MIDDLE,
 
         /**
          * Press the number key 1 (Default is 1)
@@ -351,14 +340,29 @@ public interface Icon {
         NUMBER_9,
 
         /**
-         * Press middle click (Scroll-wheel click) [Untested]
+         * Right click
          */
-        @SuppressWarnings("untested")
-        MIDDLE,
+        RIGHT,
+
+        /**
+         * Press left click while holding shift
+         */
+        SHIFT_LEFT,
+
+        /**
+         * Press right click while holding shift
+         */
+        SHIFT_RIGHT,
+
+        /**
+         * Press the offhand switch button (default is F)
+         */
+        SWAP_OFFHAND,
 
         /**
          * Other click don't list above
          */
         UNKNOWN
+
     }
 }

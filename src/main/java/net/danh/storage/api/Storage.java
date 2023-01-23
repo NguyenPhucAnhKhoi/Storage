@@ -1,9 +1,11 @@
 package net.danh.storage.api;
 
+import net.danh.storage.api.Command.CommandManager;
 import net.danh.storage.api.Database.Database;
 import net.danh.storage.api.Database.DatabaseManager;
 import net.danh.storage.api.Economy.Economy;
 import net.danh.storage.api.Economy.EconomyManager;
+import net.danh.storage.api.Gui.Action.ActionManager;
 import net.danh.storage.api.Utils.InputCatcher;
 import org.bukkit.Bukkit;
 
@@ -31,6 +33,16 @@ public final class Storage {
      * Input Catcher initialized
      */
     private static InputCatcher catcher;
+
+    /**
+     * Command Manager initialized
+     */
+    private static CommandManager command;
+
+    /**
+     * Action Manager initialized
+     */
+    private static ActionManager action;
 
     /**
      * Default databases (It is final, don't change that)
@@ -71,7 +83,7 @@ public final class Storage {
 
     /**
      * Initialized database manager (System use only)
-     * @param database Database to initialize
+     * @param database Database Manager to initialize
      */
     private static void setDatabaseManager(DatabaseManager database) {
         if (Storage.database == null) {
@@ -91,7 +103,7 @@ public final class Storage {
 
     /**
      * Initialized economy manager (System use only)
-     * @param economy Economy to initialize
+     * @param economy Economy Manager to initialize
      */
     private static void setEconomyManager(EconomyManager economy) {
         if (Storage.economy == null) {
@@ -100,11 +112,32 @@ public final class Storage {
     }
 
     /**
+     * Initialized command manager (System use only)
+     * @param command Command Manager to initialize
+     */
+    private static void setCommandManager(CommandManager command) {
+        if (Storage.command == null) {
+            Storage.command = command;
+        }
+    }
+
+    /**
+     * Initialized action manager (System use only)
+     * @param action Action Manager to initialize
+     */
+    private static void setActionManager(ActionManager action) {
+        if (Storage.action == null) {
+            Storage.action = action;
+        }
+    }
+
+    /**
      * Check if API is initialized or not
      * @return True or false
      */
     private static boolean isInitialized() {
-        return api != null && database != null && catcher != null && economy != null;
+        return api != null && database != null && catcher != null
+                && economy != null && action != null && command != null;
     }
 
     /**
@@ -113,17 +146,23 @@ public final class Storage {
      * @param catcher Input Catcher to initialize
      * @param database Database Manager to initialize
      * @param economy Economy Manager to initialize
+     * @param command Command Manager to initialize
+     * @param action Action Manager to initialize
      * @param vault Default Vault Economy
      * @param points Default Player Points Economy
      * @param tokens Default Tokens Economy
      * @param sqlite Default SQLite Database
      */
-    public static void initialize(StorageAPI api, InputCatcher catcher, DatabaseManager database, EconomyManager economy, Economy vault, Economy points, Economy tokens, Database sqlite) {
+    public static void initialize(StorageAPI api, InputCatcher catcher, DatabaseManager database,
+                                  EconomyManager economy, CommandManager command, ActionManager action,
+                                  Economy vault, Economy points, Economy tokens, Database sqlite) {
         if (Bukkit.getPluginManager().getPlugin("Storage") != null) {
             if (!isInitialized()) {
                 setStorageAPI(api);
                 setInputCatcher(catcher);
                 setDatabaseManager(database);
+                setCommandManager(command);
+                setActionManager(action);
                 initializeDefault(sqlite, vault, points, tokens);
             } else throw new UnsupportedOperationException("Can not to initialize StorageAPI again");
         } else throw new UnsupportedOperationException("Can not find plugin Storage to setup API");
@@ -187,6 +226,22 @@ public final class Storage {
      */
     public static InputCatcher getCatcher() {
         return catcher;
+    }
+
+    /**
+     * Get the command manager instance
+     * @return Instance of CommandManager
+     */
+    public static CommandManager getCommand() {
+        return command;
+    }
+
+    /**
+     * Get the action manager instance
+     * @return Instance of ActionManger
+     */
+    public static ActionManager getAction() {
+        return action;
     }
 
     /**
