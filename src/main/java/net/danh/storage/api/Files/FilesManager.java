@@ -43,7 +43,7 @@ public interface FilesManager {
      * @throws IllegalArgumentException Object
      * need to implement serializable
      */
-    void encode(Class<? extends Serializable> object, String path) throws IllegalArgumentException;
+    <object extends Serializable> void  encode(object object, String path) throws IllegalArgumentException;
 
     /**
      * Decode and return value store in this path if
