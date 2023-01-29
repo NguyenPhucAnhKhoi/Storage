@@ -10,6 +10,14 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public interface FilesManager {
+
+    /**
+     * Store custom object to this path of the config
+     * @param object Object to store
+     * @param path Path to store object
+     */
+    void set(Object object, String path);
+
     /**
      * Get custom type value from config by class
      * @param <T> Type of value store in config
@@ -69,13 +77,18 @@ public interface FilesManager {
     List<Class<?>> getDefaultTypes();
 
     /**
-     * Get the config file this class represent
-     * @return Bukkit yaml config
+     * Save the changes to the config file
      */
-    YamlConfiguration getConfigFile();
+    void save();
 
     /**
      * Reload the config file
      */
     void reload();
+
+    /**
+     * Get the config file this class represent
+     * @return Bukkit yaml config
+     */
+    YamlConfiguration getConfigFile();
 }
