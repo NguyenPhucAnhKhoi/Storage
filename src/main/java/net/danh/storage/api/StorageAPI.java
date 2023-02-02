@@ -28,6 +28,12 @@ public interface StorageAPI {
     List<Action> getDefaultActions();
 
     /**
+     * Get yhe default commands of this plugin
+     * @return List of commands
+     */
+    List<Command> getDefaultCommands();
+
+    /**
      * Load custom menu from a file config and by path
      * @param config Config file to load menu
      * @param options Options of loader

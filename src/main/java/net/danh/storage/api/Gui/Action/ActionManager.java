@@ -13,10 +13,9 @@ public interface ActionManager {
     /**
      * Unregister custom action
      * @param action Action to unregister
-     * @param identifier Unique name of custom command
      * if it duplicates this will be replaced
      */
-    void unRegister(Action action, String identifier);
+    void unRegister(Action action);
 
     /**
      * Unregister custom action with specific identifier
