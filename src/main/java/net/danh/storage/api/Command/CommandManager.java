@@ -13,10 +13,9 @@ public interface CommandManager {
     /**
      * Unregister custom command
      * @param command Command to unregister
-     * @param name Unique name of custom command
      * if it duplicates this will be replaced
      */
-    void unRegister(Command command, String name);
+    void unRegister(Command command);
 
     /**
      * Unregister custom command with specific name
