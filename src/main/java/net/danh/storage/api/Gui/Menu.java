@@ -18,12 +18,6 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     void open(Player player);
 
     /**
-     * Set the title of gui
-     * @param title The title to set
-     */
-    void setTitle(String title);
-
-    /**
      * Get the title of gui
      * @return Title as string
      */

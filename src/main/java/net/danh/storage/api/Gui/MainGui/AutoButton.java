@@ -1,4 +1,4 @@
-package net.danh.storage.api.Gui.Button;
+package net.danh.storage.api.Gui.MainGui;
 
 import net.danh.storage.api.Events.AutoType;
 import net.danh.storage.api.Gui.Icon;
