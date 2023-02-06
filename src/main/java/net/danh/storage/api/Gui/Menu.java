@@ -1,16 +1,35 @@
 package net.danh.storage.api.Gui;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * This class represent bukkit inventory
  */
 @SuppressWarnings("unused")
 public interface Menu extends Cloneable, Iterable<Icon> {
+
+    /**
+     * Update Type Enum
+     */
+    enum UpdateType {
+        /**
+         * Update all icons and the title of menu
+         */
+        TITLE,
+
+        /**
+         * Only update all icons of menu
+         */
+        NORMAL
+    }
+
     /**
      * Open this menu for player
      * @param player Player will be viewed
@@ -39,7 +58,7 @@ public interface Menu extends Cloneable, Iterable<Icon> {
      * Update gui or not
      * @return Boolean status
      */
-    boolean getUpdate();
+    boolean allowUpdate();
 
     /**
      * Get The duration of an update cycle
@@ -48,52 +67,84 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     long getUpdateTime();
 
     /**
-     * Get array contains all normal icons of gui
-     * @return Icon array
+     * Get the update type of this menu
+     * @return Update Type
      */
-    Icon[] getNIcons();
+    UpdateType getUpdateType();
 
     /**
-     * Get array contains all decorate icons of gui
-     * @return Icon array
+     * Check if the menu contains any icon matching the given this icon
+     * @param icon Icon to check
+     * @return True or false
      */
-    Icon[] getDIcons();
+    boolean contains(Icon icon);
 
     /**
-     * Get array contains all button icons of gui
-     * @return Icon array
+     * Check if the menu contains any icon has material matching the given
+     * material
+     * @param material Material to check
+     * @return True or false
      */
-    Icon[] getBIcons();
+    boolean contains(Material material);
 
     /**
-     * Get array contains all papi icons of gui
-     * @return Icon array
+     * Return the first empty slot of menu
+     * @return The first empty slot
      */
-    Icon[] getPIcons();
+    int firstEmpty();
 
     /**
-     * Get the item stack array of normal icons for load the gui
-     * @return Item stack array
+     * Find the first slot has icon matching the given icon
+     * @param icon Icon to find
+     * @return The slot was found
      */
-    ItemStack[] getNormal();
+    int first(Icon icon);
 
     /**
-     * Get the item stack array of decorate icons for load the gui
-     * @return Item stack array
+     * Find the first slot has icon with material matching the given material
+     * @param material Material to find
+     * @return The material was found
      */
-    ItemStack[] getDecorate();
+    int first(Material material);
 
     /**
-     * Get the item stack array of papi icons for load the gui
-     * @return Item stack array
+     * Get a hashmap contains all icons in this menu
+     * The key is slot, value is the icon
+     * @return HashMap represent the menu
      */
-    ItemStack[] getPapi();
+    HashMap<Integer, Icon> getIcons();
 
     /**
-     * Get the item stack array of button icons for load the gui
-     * @return Item stack array
+     * Replace current menu's icons with another
+     * @param icons New icons HashMap
      */
-    ItemStack[] getButton();
+    void setIcons(HashMap<Integer, Icon> icons);
+
+    /**
+     * Get the icon in specific slot
+     * @param slot Slot to get
+     * @return Icon stored in given slot
+     */
+    Icon getIcon(int slot);
+
+    /**
+     * Change the icon in specific slot to the given icon
+     * @param slot Slot to change
+     * @param icon Icon to change
+     */
+    void setIcon(int slot, Icon icon);
+
+    /**
+     * Add given icon to the first empty slot in menu
+     * @param icon Icon to add
+     */
+    void addIcon(Icon icon);
+
+    /**
+     * Remove the first icon matching given icon in menu
+     * @param icon Icon to remove
+     */
+    void removeIcon(Icon icon);
 
     /**
      * Implement method of iterator class

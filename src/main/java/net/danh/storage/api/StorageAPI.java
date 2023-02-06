@@ -1,7 +1,6 @@
 package net.danh.storage.api;
 
 import net.danh.storage.api.Command.Command;
-import net.danh.storage.api.Database.Database;
 import net.danh.storage.api.Files.ConfigManager;
 import net.danh.storage.api.Files.FilesManager;
 import net.danh.storage.api.Gui.Action.Action;
