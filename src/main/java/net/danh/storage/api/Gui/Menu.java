@@ -3,33 +3,15 @@ package net.danh.storage.api.Gui;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * This class represent bukkit inventory
  */
 @SuppressWarnings("unused")
 public interface Menu extends Cloneable, Iterable<Icon> {
-
-    /**
-     * Update Type Enum
-     */
-    enum UpdateType {
-        /**
-         * Update all icons and the title of menu
-         */
-        TITLE,
-
-        /**
-         * Only update all icons of menu
-         */
-        NORMAL
-    }
-
     /**
      * Open this menu for player
      * @param player Player will be viewed
@@ -41,6 +23,11 @@ public interface Menu extends Cloneable, Iterable<Icon> {
      * @return Title as string
      */
     String getTitle();
+
+    /**
+     * Set the title for this gui
+     */
+    void setTitle();
 
     /**
      * Get the size of gui
@@ -61,16 +48,21 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     boolean allowUpdate();
 
     /**
-     * Get The duration of an update cycle
+     * Set update status for this gui
+     * @param status Status to set
+     */
+    void setUpdate(boolean status);
+
+    /**
+     * Get The duration of update cycle
      * @return Milliseconds
      */
     long getUpdateTime();
 
     /**
-     * Get the update type of this menu
-     * @return Update Type
+     * Set the duration of update cycle
      */
-    UpdateType getUpdateType();
+    void setUpdateTime(long time);
 
     /**
      * Check if the menu contains any icon matching the given this icon
