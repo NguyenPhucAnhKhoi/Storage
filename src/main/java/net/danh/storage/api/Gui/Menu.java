@@ -26,8 +26,9 @@ public interface Menu extends Cloneable, Iterable<Icon> {
 
     /**
      * Set the title for this gui
+     * @param title Title to set
      */
-    void setTitle();
+    void setTitle(String title);
 
     /**
      * Get the size of gui
