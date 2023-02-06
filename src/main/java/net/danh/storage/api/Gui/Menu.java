@@ -73,14 +73,6 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     boolean contains(Icon icon);
 
     /**
-     * Check if the menu contains any icon has material matching the given
-     * material
-     * @param material Material to check
-     * @return True or false
-     */
-    boolean contains(Material material);
-
-    /**
      * Return the first empty slot of menu
      * @return The first empty slot
      */
