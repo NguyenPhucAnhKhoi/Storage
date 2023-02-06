@@ -86,13 +86,6 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     int first(Icon icon);
 
     /**
-     * Find the first slot has icon with material matching the given material
-     * @param material Material to find
-     * @return The material was found
-     */
-    int first(Material material);
-
-    /**
      * Get a hashmap contains all icons in this menu
      * The key is slot, value is the icon
      * @return HashMap represent the menu
