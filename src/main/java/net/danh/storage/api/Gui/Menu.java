@@ -1,11 +1,9 @@
 package net.danh.storage.api.Gui;
 
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * This class represent bukkit inventory
@@ -126,8 +124,13 @@ public interface Menu extends Cloneable, Iterable<Icon> {
 
     /**
      * Implement method of iterator class
-     * @return Iterator
+     * @return True or false
      */
-    @Override
-    Iterator<Icon> iterator();
+    boolean hasNext();
+
+    /**
+     * Implement method of iterator class
+     * @return The next element
+     */
+    Icon next();
 }
