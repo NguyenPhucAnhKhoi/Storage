@@ -13,9 +13,9 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface Icon {
     /**
-     * Papi icon class
+     * Normal icon class support papi
      */
-    interface Papi extends Icon {
+    interface Normal extends Icon {
         /**
          * Parse papi for this icon
          * @param player Player to parse
@@ -95,66 +95,6 @@ public interface Icon {
          * @return The name of storage
          */
         String getName();
-
-        /**
-         * The method to confirm type of icon (can not be overridden)
-         * @return Final type of icon
-         */
-        Type getType();
-    }
-
-    /**
-     * Normal icon class
-     */
-    interface Normal extends Icon {
-        /**
-         * Set the item that icon represent
-         */
-        void setItem();
-
-        /**
-         * Get the item that icon represent
-         * @return Bukkit item stack
-         */
-        ItemStack getItem();
-
-        /**
-         * The hashmap contains click and actions will be executed
-         * for each click
-         * @return HashMap of actions and clicks
-         */
-        HashMap<Click, List<Action>> getActions();
-
-        /**
-         * Set actions will be executed for this click
-         * @param click Click to set
-         * @param action Actions will be executed
-         */
-        void setAction(Click click, List<Action> action);
-
-        /**
-         * Set the hashmap contains click and action execute
-         * @param actions Hashmap of actions and clicks
-         */
-        void setAction(HashMap<Click, List<Action>> actions);
-
-        /**
-         * Executed instantly actions by this click
-         * @param click Click
-         */
-        void executeAction(Click click);
-
-        /**
-         * Set slot for this icon
-         * @param slot Slot to set
-         */
-        void setSlot(int slot);
-
-        /**
-         * Get current slot of this icon
-         * @return Slot as integer
-         */
-        int getSlot();
 
         /**
          * The method to confirm type of icon (can not be overridden)
@@ -246,7 +186,7 @@ public interface Icon {
 
     enum Type {
         /**
-         * Normal icon, execute actions when click
+         * Normal icon, can contains placeholderapi and execute actions when click
          */
         NORMAL,
 
@@ -259,12 +199,6 @@ public interface Icon {
          * Button icon, fixed function specified by the system
          */
         BUTTON,
-
-        /**
-         * PlaceholderAPI icon, like normal icon but contains
-         * placeholderapi
-         */
-        PAPI
     }
 
     enum Click {

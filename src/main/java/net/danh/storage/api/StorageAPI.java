@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -370,28 +371,85 @@ public interface StorageAPI {
     Menu createMenu(InventoryType type, String title);
 
     /**
-     * Create new icon instance with custom material
+     * Create new normal icon instance with custom material
      * @param material Bukkit material to create
-     * @return New icon was created
+     * @return New normal icon was created
      */
-    Icon createIcon(Material material);
+    Icon.Normal createNormalIcon(Material material);
 
     /**
-     * Create new icon instance with custom material, amount
+     * Create new decorate icon instance with custom material
+     * @param material Bukkit material to create
+     * @return New decorate icon was created
+     */
+    Icon.Decorate createDecorateIcon(Material material);
+
+    /**
+     * Create new button icon instance with custom material
+     * @param material Bukkit material to create
+     * @param actions Actions executor to create
+     * @return New button icon was created
+     */
+    Icon.Button createButtonIcon(Material material, HashMap<Icon.Click, List<Action>> actions);
+
+    /**
+     * Create new normal icon instance with custom material, amount
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
-     * @return New icon was created
+     * @return New normal icon was created
      */
-    Icon createIcon(Material material, Integer amount);
+    Icon.Normal createNormalIcon(Material material, Integer amount);
 
     /**
-     * Create new icon instance with custom material, amount and damage
+     * Create new decorate icon instance with custom material, amount
+     * @param material Bukkit material to create
+     * @param amount Amount as integer to create
+     * @return New decorate icon was created
+     */
+    Icon.Decorate createDecorateIcon(Material material, Integer amount);
+
+    /**
+     * Create new button icon instance with custom material, amount
+     * @param material Bukkit material to create
+     * @param amount Amount as integer to create
+     * @param actions Actions executor to create
+     * @return New button icon was created
+     */
+    Icon.Button createButtonIcon(Material material, Integer amount, HashMap<Icon.Click, List<Action>> actions);
+
+    /**
+     * Create new normal icon instance with custom material, amount and damage
+     * Note: Only use in legacy versions, it can cause error if use in newer versions
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
      * @param damage Damage as short to create
-     * @return New icon was created
+     * @return New normal icon was created
      */
-    Icon createIcon(Material material, Integer amount, Short damage);
+    @Deprecated()
+    Icon.Normal createNormalIcon(Material material, Integer amount, Short damage);
+
+    /**
+     * Create new decorate icon instance with custom material, amount and damage
+     * Note: Only use in legacy versions, it can cause error if use in newer versions
+     * @param material Bukkit material to create
+     * @param amount Amount as integer to create
+     * @param damage Damage as short to create
+     * @return New decorate icon was created
+     */
+    @Deprecated()
+    Icon createDecorateIcon(Material material, Integer amount, Short damage);
+
+    /**
+     * Create new button icon instance with custom material, amount and damage
+     * Note: Only use in legacy versions, it can cause error if use in newer versions
+     * @param material Bukkit material to create
+     * @param amount Amount as integer to create
+     * @param damage Damage as short to create
+     * @param actions Actions executor to create
+     * @return New button icon was created
+     */
+    @Deprecated()
+    Icon createButtonIcon(Material material, Integer amount, Short damage, HashMap<Icon.Click, List<Action>> actions);
 
     /**
      * Create new config manager with custom path
