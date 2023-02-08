@@ -24,6 +24,18 @@ public interface PapiItemStack {
     boolean amountHashPapi();
 
     /**
+     * Set slot for this icon
+     * @param slot Slot to set
+     */
+    void setSlot(String slot);
+
+    /**
+     * Get slot of this icon
+     * @return Slot as string
+     */
+    String getSlot();
+
+    /**
      * Slot of this icon contains papi or not
      * @return True or false
      */
