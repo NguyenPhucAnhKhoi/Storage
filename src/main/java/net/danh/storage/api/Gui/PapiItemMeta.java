@@ -26,13 +26,13 @@ public interface PapiItemMeta {
     boolean nameHasPapi();
 
     /**
-     * Get the lores of this Item Meta
+     * Get the lore of this Item Meta
      * @return Lore as list string
      */
     List<String> getLore();
 
     /**
-     * Set the lores of this Item Meta
+     * Set the lore of this Item Meta
      * @param name List string
      */
     void setLore(List<String> name);
@@ -67,9 +67,9 @@ public interface PapiItemMeta {
     /**
      * Get the level of specific enchantment in this icon
      * @param enchantment String enchantment to look for
-     * @return Level as integer
+     * @return Level as string
      */
-    int getLevel(String enchantment);
+    String getLevel(String enchantment);
 
     /**
      * Check if this icon contains this enchantment or not
@@ -80,9 +80,10 @@ public interface PapiItemMeta {
 
     /**
      * Enchants of this icon contains papi or not
+     * @param enchantment String enchantment to check
      * @return True or false
      */
-    boolean enchantHasPapi();
+    boolean enchantHasPapi(String enchantment);
 
     /**
      * Get List String represent enchantments of this icon
@@ -135,49 +136,35 @@ public interface PapiItemMeta {
     boolean isPotionMeta();
 
     /**
-     * Get potion color of item that icon represents
+     * Get potion meta of item that icon represents
      * Only available if this class instance of PotionMeta
-     * @return Potion color as string
+     * @return Potion meta as list string
      */
-    String getPotion_Color();
-
-    /**
-     * Set the potion color of item that icon represents
-     * Only available if this class instance of PotionMeta
-     * Syntax: "Potion_Color"
-     * @param potion_color Potion color to set
-     */
-    void setPotion_Color(String potion_color);
+    List<String> getPotionMeta();
 
     /**
      * Potion color of this icon contains papi or not
      * Always false if this class don't instance of PotionMeta
      * @return True or false
      */
-    boolean potionColorHasPapi();
+    boolean potionMetaHasPapi();
 
     /**
-     * Get potion effects of item that icon represents
+     * Add single potion effect to item's potion meta
      * Only available if this class instance of PotionMeta
-     * @return Potion effects as string
+     * Syntax: "<PotionEffectType>;<duration>;<amplifier>"
+     * @param potionEffect Potion effect to add
      */
-    String getPotion_Effects();
+    void addPotionEffect(String potionEffect);
 
     /**
-     * Set the potion effects of item that icon represents
+     * Add the potion effects to item's potion meta
      * Only available if this class instance of PotionMeta
-     * Syntax: "PotionEffectType" or "PotionEffectType;Duration"
-     * or "PotionEffectType;Duration;Level"
-     * @param potion_effects Potion color to set
+     * Syntax: " - <PotionEffectType_1>;<duration_1>;<amplifier_1>"
+     *         " - <PotionEffectType_2>;<duration_2>;<amplifier_2>"
+     * @param potionEffects Potion effects to add
      */
-    void setPotion_Effects(String potion_effects);
-
-    /**
-     * Potion effects of this icon contains papi or not
-     * Always false if this class don't instance of PotionMeta
-     * @return True or false
-     */
-    boolean potionEffectsHasPapi();
+    void addPotionEffects(List<String> potionEffects);
 
     /**
      * Check if this PapiItemMeta instance of BannerMeta or not
@@ -188,17 +175,9 @@ public interface PapiItemMeta {
     /**
      * Get banner meta of item that icon represents
      * Only available if this class instance of BannerMeta
-     * @return Banner Meta as string
+     * @return Banner Meta as list string
      */
-    String getBannerMeta();
-
-    /**
-     * Set the banner meta of item that icon represents
-     * Only available if this class instance of BannerMeta
-     * Syntax: "Dye-color;Pattern-type"
-     * @param bannerMeta Banner Meta to set
-     */
-    void setBannerMeta(String bannerMeta);
+    List<String> getBannerMeta();
 
     /**
      * Banner meta of this icon contains papi or not
@@ -206,4 +185,21 @@ public interface PapiItemMeta {
      * @return True or false
      */
     boolean bannerMetaHasPapi();
+
+    /**
+     * Add singer banner pattern to item's banner meta
+     * Only available if this class instance of BannerMeta
+     * Syntax: "<Dye_color>;<pattern_type>"
+     * @param bannerPattern Banner Pattern to add
+     */
+    void addBannerPattern(String bannerPattern);
+
+    /**
+     * Add the banner patterns to item's banner meta
+     * Only available if this class instance of BannerMeta
+     * Syntax: " - <Dye_color_1>;<pattern_type_1>"
+     *         " - <Dye_color_2>;<pattern_type_2>"
+     * @param bannerPatterns Banner Patterns to add
+     */
+    void addBannerPatterns(List<String> bannerPatterns);
 }
