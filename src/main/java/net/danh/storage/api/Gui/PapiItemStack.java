@@ -1,5 +1,8 @@
 package net.danh.storage.api.Gui;
 
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
 /**
  * Class represent ItemStack but contains Papi
  */
@@ -88,4 +91,11 @@ public interface PapiItemStack {
      * @return Papi ItemMeta
      */
     PapiItemMeta getItemMeta();
+
+    /**
+     * Parse this papi item stack to bukkit item stack
+     * @param player Player to parse
+     * @return Bukkit Item Stack
+     */
+    ItemStack parseItemStack(Player player);
 }

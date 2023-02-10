@@ -1,5 +1,8 @@
 package net.danh.storage.api.Gui;
 
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.meta.ItemMeta;
+
 import java.util.List;
 
 /**
@@ -202,4 +205,11 @@ public interface PapiItemMeta {
      * @param bannerPatterns Banner Patterns to add
      */
     void addBannerPatterns(List<String> bannerPatterns);
+
+    /**
+     * Parse this papi item meta to bukkit item meta
+     * @param player Player to parse
+     * @return Bukkit Item Meta
+     */
+    ItemMeta parseItemMeta(Player player);
 }
