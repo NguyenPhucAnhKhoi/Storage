@@ -48,14 +48,14 @@ public interface PapiItemMeta {
 
     /**
      * Enchant this icon by the String represent enchantment and level
-     * Syntax: "Enchantment" (default level 1) or "Enchantment;Level"
+     * <br>Syntax: "Enchantment" (default level 1) or "Enchantment;Level"
      * @param enchantment String enchantment and level to enchant
      */
     void enchant(String enchantment);
 
     /**
      * Enchant this icon by a Map of String represent enchantment and its level
-     * Syntax: like enchant
+     * <br>Syntax: like enchant
      * @param enchantments List string of enchantment and level
      */
     void enchant(List<String> enchantments);
@@ -102,7 +102,7 @@ public interface PapiItemMeta {
 
     /**
      * Set the item flags of item that icon represents
-     * Syntax: "Item_Flag"
+     * <br>Syntax: "Item_Flag"
      * @param itemFlags Item flags to set
      */
     void setItemFlags(List<String> itemFlags);
@@ -121,7 +121,7 @@ public interface PapiItemMeta {
 
     /**
      * Set the unbreakable status of item that icon represents
-     * Syntax: "True" or "False"
+     * <br>Syntax: "True" or "False"
      * @param unbreakable Unbreakable status to set
      */
     void setUnbreakable(String unbreakable);
@@ -140,31 +140,31 @@ public interface PapiItemMeta {
 
     /**
      * Get potion meta of item that icon represents
-     * Only available if this class instance of PotionMeta
+     * <br>Only available if this class instance of PotionMeta
      * @return Potion meta as list string
      */
     List<String> getPotionMeta();
 
     /**
      * Potion color of this icon contains papi or not
-     * Always false if this class don't instance of PotionMeta
+     * <br>Always false if this class don't instance of PotionMeta
      * @return True or false
      */
     boolean potionMetaHasPapi();
 
     /**
      * Add single potion effect to item's potion meta
-     * Only available if this class instance of PotionMeta
-     * Syntax: "{PotionEffectType};{duration};{amplifier}"
+     * <br>Only available if this class instance of PotionMeta
+     * <br>Syntax: "{PotionEffectType};{duration};{amplifier}"
      * @param potionEffect Potion effect to add
      */
     void addPotionEffect(String potionEffect);
 
     /**
      * Add the potion effects to item's potion meta
-     * Only available if this class instance of PotionMeta
-     * Syntax: " - {PotionEffectType_1};{duration_1};{amplifier_1}"
-     *         " - {PotionEffectType_2};{duration_2};{amplifier_2}"
+     * <br>Only available if this class instance of PotionMeta
+     * <br>Syntax: " - {PotionEffectType_1};{duration_1};{amplifier_1}"
+     * <br>        " - {PotionEffectType_2};{duration_2};{amplifier_2}"
      * @param potionEffects Potion effects to add
      */
     void addPotionEffects(List<String> potionEffects);
@@ -177,31 +177,31 @@ public interface PapiItemMeta {
 
     /**
      * Get banner meta of item that icon represents
-     * Only available if this class instance of BannerMeta
+     * <br>Only available if this class instance of BannerMeta
      * @return Banner Meta as list string
      */
     List<String> getBannerMeta();
 
     /**
      * Banner meta of this icon contains papi or not
-     * Always false if this class don't instance of BannerMeta
+     * <br>Always false if this class don't instance of BannerMeta
      * @return True or false
      */
     boolean bannerMetaHasPapi();
 
     /**
      * Add singer banner pattern to item's banner meta
-     * Only available if this class instance of BannerMeta
-     * Syntax: "{DyeColor};{pattern_type}"
+     * <br>Only available if this class instance of BannerMeta
+     * <br>Syntax: "{DyeColor};{pattern_type}"
      * @param bannerPattern Banner Pattern to add
      */
     void addBannerPattern(String bannerPattern);
 
     /**
      * Add the banner patterns to item's banner meta
-     * Only available if this class instance of BannerMeta
-     * Syntax: " - {DyeColor_1};{pattern_type_1}"
-     *         " - {DyeColor_2};{pattern_type_2}"
+     * <br>Only available if this class instance of BannerMeta
+     * <br>Syntax: " - {DyeColor_1};{pattern_type_1}"
+     * <br>        " - {DyeColor_2};{pattern_type_2}"
      * @param bannerPatterns Banner Patterns to add
      */
     void addBannerPatterns(List<String> bannerPatterns);

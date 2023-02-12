@@ -17,11 +17,11 @@ public interface Command {
 
     /**
      * This command guide will be displayed when sender use /storage help
-     * Example: "/storage example <argument 1> [argument 2]"
+     * Example: "/storage example {argument 1} [argument 2]"
      * Note: Length of guide should be kept to a minimum
      *       You can not break lines in command guide
      *       You can use color codes
-     *       <> is require; [] is optional
+     *       {} is require; [] is optional
      * @return Command guide
      */
     String getCommandUse();

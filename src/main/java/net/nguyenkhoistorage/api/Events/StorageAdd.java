@@ -18,8 +18,7 @@ public class StorageAdd extends StoragePlayerEvent {
      * @param name Name of storage that resources will be stored in
      * @param amount Amount of resources will be stored in
      * @param all Is this event add all or not
-     * @param inv Is this event take resources from inventory to
-     * add or not
+     * @param inv Is this event take resources from inventory to add or not
      */
     public StorageAdd(Player player, String name, Integer amount, Boolean all, Boolean inv) {
         super(player);

@@ -2,6 +2,9 @@ package net.nguyenkhoistorage.api.Gui.Action;
 
 import java.util.List;
 
+/**
+ * Class use to manage actions
+ */
 @SuppressWarnings("unused")
 public interface ActionManager {
     /**

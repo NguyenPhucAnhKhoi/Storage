@@ -2,6 +2,9 @@ package net.nguyenkhoistorage.api.Economy;
 
 import org.bukkit.entity.Player;
 
+/**
+ * Developers can use this class to create their own custom economy
+ */
 @SuppressWarnings("unused")
 public interface Economy {
     /**

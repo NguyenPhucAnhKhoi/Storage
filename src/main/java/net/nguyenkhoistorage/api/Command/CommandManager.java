@@ -2,6 +2,9 @@ package net.nguyenkhoistorage.api.Command;
 
 import java.util.List;
 
+/**
+ * Class use to manage command
+ */
 @SuppressWarnings("unused")
 public interface CommandManager {
     /**

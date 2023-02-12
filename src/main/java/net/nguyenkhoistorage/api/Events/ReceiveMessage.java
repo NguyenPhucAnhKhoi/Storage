@@ -17,8 +17,7 @@ public class ReceiveMessage extends StoragePlayerEvent {
      * Constructor method
      * @param receiver Player will be received message
      * @param message Message will be sent
-     * @param subMessage Sub Message will be sent smaller
-     * and under than the message.
+     * @param subMessage Sub Message will be sent smaller and under than the message.
      * @param type Message Type
      */
     public ReceiveMessage(Player receiver, String message, String subMessage, MessageType type) {
@@ -59,7 +58,7 @@ public class ReceiveMessage extends StoragePlayerEvent {
 
     /**
      * Set the sub message for this event
-     * Sub message only available with title type
+     * <br>Sub message only available with title type
      * @param subMessage Sub message to set
      */
     public void setSubMessage(String subMessage) {

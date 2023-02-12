@@ -29,7 +29,7 @@ public interface FilesManager {
 
     /**
      * Get custom type value from config by class
-     * Get the nearest path if the path not found
+     * <br>Get the nearest path if the path not found
      * @param <T> Type of value store in config
      * @param clazz Class of value to get
      * @param path Path to get value
@@ -55,24 +55,21 @@ public interface FilesManager {
     <object extends Serializable> void  encode(object object, String path) throws IllegalArgumentException;
 
     /**
-     * Decode and return value store in this path if
-     * path is encoding object
+     * Decode and return value store in this path if path is encoding object
      * @param path Path to decode
      * @return The object after decode
      */
     Object decode(String path);
 
     /**
-     * Check if value store in this path is encoding
-     * or not
+     * Check if value store in this path is encoding or not
      * @param path Path to check
      * @return True or false
      */
     boolean isEncode(String path);
 
     /**
-     * Get the default type that bukkit config
-     * support
+     * Get the default type that bukkit config support
      * @return List contains class types
      */
     List<Class<?>> getDefaultTypes();

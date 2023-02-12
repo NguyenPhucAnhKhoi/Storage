@@ -2,6 +2,9 @@ package net.nguyenkhoistorage.api.Economy;
 
 import java.util.List;
 
+/**
+ * Class use to manage economies
+ */
 @SuppressWarnings("unused")
 public interface EconomyManager {
     /**

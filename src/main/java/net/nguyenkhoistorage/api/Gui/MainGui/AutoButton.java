@@ -1,7 +1,6 @@
 package net.nguyenkhoistorage.api.Gui.MainGui;
 
 import net.nguyenkhoistorage.api.Events.AutoType;
-import net.nguyenkhoistorage.api.Gui.Icon;
 import net.nguyenkhoistorage.api.Gui.PapiItemStack;
 import org.bukkit.inventory.ItemStack;
 

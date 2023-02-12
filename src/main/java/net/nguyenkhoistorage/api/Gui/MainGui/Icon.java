@@ -1,6 +1,7 @@
-package net.nguyenkhoistorage.api.Gui;
+package net.nguyenkhoistorage.api.Gui.MainGui;
 
 import net.nguyenkhoistorage.api.Gui.Action.Action;
+import net.nguyenkhoistorage.api.Gui.PapiItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -12,6 +13,18 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public interface Icon {
+
+    /**
+     * The method to confirm type of icon (can not be overridden)
+     * @param icon Icon to get type
+     * @return Final type of icon
+     */
+    static Type getType(Icon icon) {
+        if (icon instanceof Normal) return Type.NORMAL;
+        if (icon instanceof Decorate) return Type.DECORATE;
+        if (icon instanceof Button) return Type.BUTTON;
+        return null;
+    }
     /**
      * Normal icon class support papi
      */
@@ -35,8 +48,7 @@ public interface Icon {
         PapiItemStack getItem();
 
         /**
-         * The hashmap contains click and actions will be executed
-         * for each click
+         * The hashmap contains click and actions will be executed for each click
          * @return HashMap of actions and clicks
          */
         HashMap<Click, List<Action>> getActions();
@@ -95,12 +107,6 @@ public interface Icon {
          * @return The name of storage
          */
         String getName();
-
-        /**
-         * The method to confirm type of icon (can not be overridden)
-         * @return Final type of icon
-         */
-        Type getType();
     }
 
     /**
@@ -129,12 +135,6 @@ public interface Icon {
          * @return Slot as integer
          */
         int getSlot();
-
-        /**
-         * The method to confirm type of icon (can not be overridden)
-         * @return Final type of icon
-         */
-        Type getType();
     }
 
     /**
@@ -148,8 +148,7 @@ public interface Icon {
         int getSlot();
 
         /**
-         * The hashmap contains click and actions will be execute
-         * for each click
+         * The hashmap contains click and actions will be execute for each click
          * @return HashMap of actions and clicks
          */
         HashMap<Click, List<Action>> getActions();
@@ -177,12 +176,6 @@ public interface Icon {
          * @param status True or false
          */
         void setUpdate(Boolean status);
-
-        /**
-         * The method to confirm type of icon (can not be overridden)
-         * @return Final type of icon
-         */
-        Type getType();
     }
 
     /**
@@ -304,6 +297,5 @@ public interface Icon {
          * Other click don't list above
          */
         UNKNOWN
-
     }
 }

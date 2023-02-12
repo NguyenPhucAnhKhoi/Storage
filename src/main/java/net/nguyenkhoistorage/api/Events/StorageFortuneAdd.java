@@ -27,6 +27,7 @@ public class StorageFortuneAdd extends StorageNaturalAdd {
 
     /**
      * Get the level fortune to be executed
+     * @return The level of fortune as integer
      */
     public int getLevel() {
         return level;
@@ -34,8 +35,7 @@ public class StorageFortuneAdd extends StorageNaturalAdd {
 
     /**
      * Set the level fortune to execute
-     * It won't change the level fortune enchantment
-     * of the player's tool
+     * <br>It won't change the level fortune enchantment of the player's tool
      * @param level Level to set
      */
     public void setLevel(int level) {

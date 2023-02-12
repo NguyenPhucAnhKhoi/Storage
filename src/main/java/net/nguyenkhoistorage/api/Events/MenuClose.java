@@ -1,6 +1,6 @@
 package net.nguyenkhoistorage.api.Events;
 
-import net.nguyenkhoistorage.api.Gui.Menu;
+import net.nguyenkhoistorage.api.Gui.MainGui.Menu;
 import org.bukkit.entity.Player;
 
 /**

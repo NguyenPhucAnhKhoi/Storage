@@ -1,5 +1,8 @@
 package net.nguyenkhoistorage.api.Events;
 
+/**
+ * List types of message can be send to player by this plugin
+ */
 @SuppressWarnings("unused")
 public enum MessageType {
     /**

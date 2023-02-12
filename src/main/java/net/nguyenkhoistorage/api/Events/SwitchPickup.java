@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
  */
 @SuppressWarnings("unused")
 public class SwitchPickup extends SwitchAuto {
+
     /**
      * Constructor method
      * @param player Player will be switched mode

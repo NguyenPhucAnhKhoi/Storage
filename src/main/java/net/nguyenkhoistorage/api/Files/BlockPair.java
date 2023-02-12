@@ -12,7 +12,7 @@ public class BlockPair {
 
     /**
      * Crate new instance by a string
-     * Format: Material;Amount
+     * <br>Syntax: {Material};{Amount}
      * @param string String to create
      */
     public BlockPair(String string) {

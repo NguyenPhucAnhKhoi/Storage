@@ -24,15 +24,13 @@ public interface ConfigManager {
 
     /**
      * Merge map blocks of this manager to config file
-     * Note: It will change the data stored in config
-     * so make sure you want to merge
+     * <br>Note: It will change the data stored in config so make sure you want to merge
      */
     void mergeFromConfig();
 
     /**
      * Load map blocks from config to this manager
-     * Note: It will replace the map blocks stored in
-     * this manager so make sure you want to merge
+     * <br>Note: It will replace the map blocks stored in this manager so make sure you want to merge
      */
     void mergeToConfig();
 

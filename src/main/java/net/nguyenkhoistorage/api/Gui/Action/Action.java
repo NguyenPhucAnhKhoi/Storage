@@ -2,6 +2,9 @@ package net.nguyenkhoistorage.api.Gui.Action;
 
 import org.bukkit.entity.Player;
 
+/**
+ * This class represent of action will be executed when player click in icon hold this action
+ */
 @SuppressWarnings("unused")
 public interface Action {
     /**

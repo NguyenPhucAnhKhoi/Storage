@@ -9,20 +9,20 @@ import org.bukkit.entity.Player;
 public class StorageSet extends StoragePlayerEvent {
     private String name;
     private int amount;
-    private boolean all;
+    private boolean max;
 
     /**
      * Constructor method
      * @param player Player will be received resources
      * @param name Name of storage that resources will be stored in
      * @param amount Amount of resources will be stored in
-     * @param all Is this event add all or not
+     * @param max Is this event add to max or not
      */
-    public StorageSet(Player player, String name, Integer amount, Boolean all) {
+    public StorageSet(Player player, String name, Integer amount, Boolean max) {
         super(player);
         this.name = name;
         this.amount = amount;
-        this.all = all;
+        this.max = max;
     }
 
     /**
@@ -42,11 +42,11 @@ public class StorageSet extends StoragePlayerEvent {
     }
 
     /**
-     * Get the status of set all mode
+     * Get the status of set max mode
      * @return True or false
      */
     public boolean isAll() {
-        return all;
+        return max;
     }
 
     /**
@@ -67,10 +67,10 @@ public class StorageSet extends StoragePlayerEvent {
 
 
     /**
-     * Set all to storage or not
-     * @param all True or false
+     * Set max for storage or not
+     * @param max True or false
      */
-    public void setAll(boolean all) {
-        this.all = all;
+    public void setAll(boolean max) {
+        this.max = max;
     }
 }

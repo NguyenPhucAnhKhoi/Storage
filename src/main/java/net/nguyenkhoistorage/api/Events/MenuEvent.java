@@ -1,6 +1,6 @@
 package net.nguyenkhoistorage.api.Events;
 
-import net.nguyenkhoistorage.api.Gui.Menu;
+import net.nguyenkhoistorage.api.Gui.MainGui.Menu;
 import org.bukkit.entity.Player;
 
 /**
@@ -13,6 +13,7 @@ public class MenuEvent extends StoragePlayerEvent {
     /**
      * Constructor method
      * @param player Player causes this event
+     * @param menu Menu which player is interacting with
      */
     public MenuEvent(Player player, Menu menu) {
         super(player);

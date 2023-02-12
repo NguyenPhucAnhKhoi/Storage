@@ -1,5 +1,6 @@
-package net.nguyenkhoistorage.api.Gui;
+package net.nguyenkhoistorage.api.Gui.MainGui;
 
+import net.nguyenkhoistorage.api.Gui.MainGui.Icon;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 
@@ -87,7 +88,7 @@ public interface Menu extends Cloneable, Iterable<Icon> {
 
     /**
      * Get a hashmap contains all icons in this menu
-     * The key is slot, value is the icon
+     * <br>The key is slot, value is the icon
      * @return HashMap represent the menu
      */
     HashMap<Integer, Icon> getIcons();

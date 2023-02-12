@@ -4,9 +4,9 @@ import net.nguyenkhoistorage.api.Command.Command;
 import net.nguyenkhoistorage.api.Files.ConfigManager;
 import net.nguyenkhoistorage.api.Files.FilesManager;
 import net.nguyenkhoistorage.api.Gui.Action.Action;
-import net.nguyenkhoistorage.api.Gui.Icon;
+import net.nguyenkhoistorage.api.Gui.MainGui.Icon;
 import net.nguyenkhoistorage.api.Gui.MenuOptions;
-import net.nguyenkhoistorage.api.Gui.Menu;
+import net.nguyenkhoistorage.api.Gui.MainGui.Menu;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -28,7 +28,7 @@ public interface StorageAPI {
     List<Action> getDefaultActions();
 
     /**
-     * Get yhe default commands of this plugin
+     * Get the default commands of this plugin
      * @return List of commands
      */
     List<Command> getDefaultCommands();
@@ -51,12 +51,14 @@ public interface StorageAPI {
 
     /**
      * Get custom default menu for all players
+     * @return The default menu
      */
     Menu getDefaultMenu();
 
     /**
      * Get custom default menu for specific player
      * @param player Player to get default menu
+     * @return Get the default menu of specific player
      */
     Menu getPlayerMenu(Player player);
 
@@ -132,6 +134,7 @@ public interface StorageAPI {
      * Direct add custom amount resources to this player storage
      * @param player Player will be added resources
      * @param name Name of storage to add
+     * @param amount Amount of resources to add
      */
     void addStorage(Player player, String name, Integer amount);
 
@@ -174,15 +177,16 @@ public interface StorageAPI {
 
     /**
      * Take custom amount resources from specific storage for this player
-     * The amount will be limited by empty slot this player has
+     * <br>The amount will be limited by empty slot this player has
      * @param player Player will be taken resources
      * @param name Name of storage to take
+     * @param amount Amount of resources to take
      */
     void takeIStorage(Object player, String name, Object amount);
 
     /**
      * Take all resources from specific storage for this player
-     * The amount will be limited by empty slot this player has
+     * <br>The amount will be limited by empty slot this player has
      * @param player Player will be taken resources
      * @param name Name of storage to take all
      */
@@ -192,6 +196,7 @@ public interface StorageAPI {
      * Sell custom amount resources in specific storage of this player
      * @param player Player will be sold resources
      * @param name Name of storage to sell
+     * @param amount Amount of resources to sell
      */
     void sellStorage(Player player, String name, Integer amount);
 
@@ -419,7 +424,7 @@ public interface StorageAPI {
 
     /**
      * Create new normal icon instance with custom material, amount and damage
-     * Note: Only use in legacy versions, it can cause error if use in newer versions
+     * <br>Note: Only use in legacy versions, it can cause error if use in newer versions
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
      * @param damage Damage as short to create
@@ -430,7 +435,7 @@ public interface StorageAPI {
 
     /**
      * Create new decorate icon instance with custom material, amount and damage
-     * Note: Only use in legacy versions, it can cause error if use in newer versions
+     * <br>Note: Only use in legacy versions, it can cause error if use in newer versions
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
      * @param damage Damage as short to create
@@ -441,7 +446,7 @@ public interface StorageAPI {
 
     /**
      * Create new button icon instance with custom material, amount and damage
-     * Note: Only use in legacy versions, it can cause error if use in newer versions
+     * <br>Note: Only use in legacy versions, it can cause error if use in newer versions
      * @param material Bukkit material to create
      * @param amount Amount as integer to create
      * @param damage Damage as short to create

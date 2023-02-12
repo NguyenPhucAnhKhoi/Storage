@@ -3,7 +3,7 @@ package net.nguyenkhoistorage.api.Database;
 import java.util.List;
 
 /**
- * Class used to manage databases
+ * Class use to manage databases
  */
 @SuppressWarnings("unused")
 public interface DatabaseManager {

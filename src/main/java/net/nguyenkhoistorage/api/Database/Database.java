@@ -105,8 +105,8 @@ public interface Database {
 
     /**
      * Run code for this database when plugin is reloading
-     * Note: This HashMap contains key as Storage Name and value as the Material
-     * of this storage store
+     * <br>Note: This HashMap contains key as Storage Name and value as the Material
+     * <br>of this storage store
      * @param newData The new names correspond to the ingredients
      */
     void onReload(Map<String, Material> newData);

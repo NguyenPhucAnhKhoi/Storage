@@ -53,8 +53,7 @@ public class BlockSection {
     }
 
     /**
-     * Get the block pair of original blocks of this config
-     * block section
+     * Get the block pair of original blocks of this config block section
      * @return The list of block pair
      */
     public List<BlockPair> getBlocks() {
@@ -86,8 +85,7 @@ public class BlockSection {
     }
 
     /**
-     * Set the block storage materials list of this config
-     * block section
+     * Set the block storage materials list of this config block section
      * @param materials Bukkit materials list
      */
     public void setBlocks(List<BlockPair> materials) {
