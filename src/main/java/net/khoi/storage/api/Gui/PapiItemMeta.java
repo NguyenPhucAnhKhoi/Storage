@@ -207,6 +207,26 @@ public interface PapiItemMeta {
     void addBannerPatterns(List<String> bannerPatterns);
 
     /**
+     * Base color of this icon contains papi or not
+     * <br>Always false if this class don't instance of BannerMeta
+     * @return True or false
+     */
+    boolean baseColorHasPapi();
+
+    /**
+     * Set the base color of this icon if this item meta instance of BannerMeta
+     * @param baseColor Base Color to set
+     */
+    void setBaseColor(String baseColor);
+
+    /**
+     * Get the base color of this icon
+     * <br>Always return null if this class don't instance of BannerMeta
+     * @return Base Color as string
+     */
+    String getBaseColor();
+
+    /**
      * Parse this papi item meta to bukkit item meta
      * @param player Player to parse
      * @return Bukkit Item Meta
