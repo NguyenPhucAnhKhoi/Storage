@@ -133,12 +133,6 @@ public interface PapiItemMeta {
     boolean unbreakableHasPapi();
 
     /**
-     * Check if this PapiItemMeta instance of PotionMeta or not
-     * @return True or false
-     */
-    boolean isPotionMeta();
-
-    /**
      * Get potion meta of item that icon represents
      * <br>Only available if this class instance of PotionMeta
      * @return Potion meta as list string
@@ -168,12 +162,6 @@ public interface PapiItemMeta {
      * @param potionEffects Potion effects to add
      */
     void addPotionEffects(List<String> potionEffects);
-
-    /**
-     * Check if this PapiItemMeta instance of BannerMeta or not
-     * @return True or false
-     */
-    boolean isBannerMeta();
 
     /**
      * Get banner meta of item that icon represents
