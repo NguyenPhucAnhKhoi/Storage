@@ -79,13 +79,22 @@ public interface Icon {
         void setUpdate(Boolean status);
 
         /**
-         * Set slot for this icon
-         * @param slot Slot to set
+         * Set placeholder slot for this icon
+         * <br>Note: Can contains placeholders
+         * @param slot Slot as String to set
+         */
+        void setRawSlot(String slot);
+
+        /**
+         * Set normal slot for this icon
+         * <br>Note: This method is the same as setRawSlot()
+         * @param slot Slot as integer to set
          */
         void setSlot(int slot);
 
         /**
          * Set the storage name this icon represent
+         * <br>Note: can contains placeholders
          * @param name The name of storage
          */
         void setName(String name);
@@ -98,6 +107,12 @@ public interface Icon {
 
         /**
          * Get current slot of this icon
+         * @return Slot as string can contains placeholders
+         */
+        String getRawSlot();
+
+        /**
+         * @see Normal#getRawSlot()
          * @return Slot as integer
          */
         int getSlot();
@@ -143,6 +158,12 @@ public interface Icon {
     interface Button extends Icon {
         /**
          * Get current slot of this icon
+         * @return Slot as string can contains placeholders
+         */
+        String getRawSlot();
+
+        /**
+         * @see Button#getRawSlot()
          * @return Slot as integer
          */
         int getSlot();
