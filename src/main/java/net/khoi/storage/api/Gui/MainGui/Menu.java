@@ -66,6 +66,12 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     void setUpdateTime(long time);
 
     /**
+     * Get the updater this menu hold
+     * @return Updater was held by this menu
+     */
+    Updater getUpdate();
+
+    /**
      * Check if the menu contains any icon matching the given this icon
      * @param icon Icon to check
      * @return True or false
