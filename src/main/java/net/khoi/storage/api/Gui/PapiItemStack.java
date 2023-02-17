@@ -27,12 +27,6 @@ public interface PapiItemStack {
     boolean amountHashPapi();
 
     /**
-     * Slot of this icon contains papi or not
-     * @return True or false
-     */
-    boolean slotHasPapi();
-
-    /**
      * Set the durability of item this icon represent
      * @param durability Durability to set
      */
