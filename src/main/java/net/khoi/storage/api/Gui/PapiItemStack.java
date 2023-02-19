@@ -75,13 +75,6 @@ public interface PapiItemStack {
     PapiItemMeta getItemMeta();
 
     /**
-     * Parse this papi item stack's slot to integer slot
-     * @param player Player to parse
-     * @return Slot as integer
-     */
-    int parseSlot(Player player);
-
-    /**
      * Parse this papi item stack to bukkit item stack
      * @param player Player to parse
      * @return Bukkit Item Stack
