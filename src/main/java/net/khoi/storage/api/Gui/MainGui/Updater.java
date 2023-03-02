@@ -38,8 +38,9 @@ public interface Updater {
      * <br>Note: - This update section will be stopped when player close this menu
      * <br>      - This update section won't be started if player didn't open this menu
      * @param player Target player to start update section
+     * @param period Time interval between each update
      */
-    void startUpdate(Player player);
+    void startUpdate(Player player, long period);
 
     /**
      * Stop update process forever
