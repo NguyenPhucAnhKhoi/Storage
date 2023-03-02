@@ -69,7 +69,7 @@ public interface Menu extends Cloneable, Iterable<Icon> {
      * Get the updater this menu hold
      * @return Updater was held by this menu
      */
-    Updater getUpdate();
+    Updater getUpdater();
 
     /**
      * Check if the menu contains any icon matching the given this icon
