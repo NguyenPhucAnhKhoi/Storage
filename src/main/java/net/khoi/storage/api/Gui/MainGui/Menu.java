@@ -54,18 +54,6 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     void setUpdate(boolean status);
 
     /**
-     * Get The duration of update cycle
-     * @return Milliseconds
-     */
-    long getUpdateTime();
-
-    /**
-     * Set the duration of update cycle
-     * @param time Time to set
-     */
-    void setUpdateTime(long time);
-
-    /**
      * Get the updater this menu hold
      * @return Updater was held by this menu
      */
