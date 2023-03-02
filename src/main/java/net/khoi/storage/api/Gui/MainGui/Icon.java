@@ -73,12 +73,6 @@ public interface Icon {
         void executeAction(Click click);
 
         /**
-         * Set update status for this icon
-         * @param status True or false
-         */
-        void setUpdate(Boolean status);
-
-        /**
          * Set placeholder slot for this icon
          * <br>Note: Can contains placeholders
          * @param slot Slot as String to set
@@ -98,12 +92,6 @@ public interface Icon {
          * @param name The name of storage
          */
         void setName(String name);
-
-        /**
-         * Get current update status of this icon
-         * @return True or false
-         */
-        boolean getUpdate();
 
         /**
          * Get current slot of this icon
@@ -181,22 +169,10 @@ public interface Icon {
         PapiItemStack getItem();
 
         /**
-         * Get current update status of this icon
-         * @return True or false
-         */
-        boolean getUpdate();
-
-        /**
          * Set the item that icon represent
          * @param item Item to set
          */
         void setItem(ItemStack item);
-
-        /**
-         * Set update status for this icon
-         * @param status True or false
-         */
-        void setUpdate(Boolean status);
     }
 
     /**

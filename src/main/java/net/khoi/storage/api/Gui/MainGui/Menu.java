@@ -3,7 +3,6 @@ package net.khoi.storage.api.Gui.MainGui;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 
-import java.util.HashMap;
 import java.util.Iterator;
 
 /**
@@ -91,13 +90,13 @@ public interface Menu extends Cloneable, Iterable<Icon> {
      * <br>The key is slot, value is the icon
      * @return HashMap represent the menu
      */
-    HashMap<Integer, Icon> getIcons();
+    IconContainer getIcons();
 
     /**
      * Replace current menu's icons with another
      * @param icons New icons HashMap
      */
-    void setIcons(HashMap<Integer, Icon> icons);
+    void setIcons(IconContainer icons);
 
     /**
      * Get the icon in specific slot
