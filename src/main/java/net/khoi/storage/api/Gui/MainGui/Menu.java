@@ -18,6 +18,13 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     void open(Player player);
 
     /**
+     * Close this menu for player
+     * <br>Only work if player is viewing this menu
+     * @param player Player will be closed
+     */
+    void close(Player player);
+
+    /**
      * Get the title of gui
      * @return Title as string
      */
