@@ -51,20 +51,20 @@ public interface Icon {
          * The hashmap contains click and actions will be executed for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, List<Action>> getActions();
+        HashMap<Click, List<String>> getActions();
 
         /**
          * Set actions will be executed for this click
          * @param click Click to set
          * @param action Actions will be executed
          */
-        void setAction(Click click, List<Action> action);
+        void setAction(Click click, List<String> action);
 
         /**
          * Set the hashmap contains click and actions will be executed
          * @param actions Hashmap of actions and clicks
          */
-        void setAction(HashMap<Click, List<Action>> actions);
+        void setAction(HashMap<Click, List<String>> actions);
 
         /**
          * Executed instantly actions by this click
@@ -160,7 +160,7 @@ public interface Icon {
          * The hashmap contains click and actions will be execute for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, List<Action>> getActions();
+        HashMap<Click, List<String>> getActions();
 
         /**
          * Get the item that icon represent
