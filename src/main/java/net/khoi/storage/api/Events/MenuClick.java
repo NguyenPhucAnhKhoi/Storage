@@ -4,6 +4,9 @@ import net.khoi.storage.api.Gui.Action.Action;
 import net.khoi.storage.api.Gui.MainGui.Icon;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+
+import java.util.List;
+
 /**
  * This event will be called when player click in plugin menu
  */
@@ -13,7 +16,7 @@ public class MenuClick extends StoragePlayerEvent {
     private final int slot;
     private final Icon icon;
     private final Icon.Click click;
-    private Action action;
+    private List<Action> action;
 
     /**
      * Constructor method
@@ -24,7 +27,7 @@ public class MenuClick extends StoragePlayerEvent {
      * @param icon The icon was clicked by player
      * @param click Click type of this event
      */
-    public MenuClick(Player player, Inventory menu, int slot, Action action, Icon icon, Icon.Click click) {
+    public MenuClick(Player player, Inventory menu, int slot, List<Action> action, Icon icon, Icon.Click click) {
         super(player);
         this.slot = slot;
         this.action = action;
@@ -53,7 +56,7 @@ public class MenuClick extends StoragePlayerEvent {
      * Get action will be executed
      * @return Action
      */
-    public Action getAction() {
+    public List<Action> getAction() {
         return action;
     }
 
@@ -77,7 +80,7 @@ public class MenuClick extends StoragePlayerEvent {
      * Set the action will be executed
      * @param action Action to set
      */
-    public void setAction(Action action) {
+    public void setAction(List<Action> action) {
         this.action = action;
     }
 }
