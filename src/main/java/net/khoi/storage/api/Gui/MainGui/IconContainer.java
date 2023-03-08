@@ -1,10 +1,19 @@
 package net.khoi.storage.api.Gui.MainGui;
 
+import java.util.HashMap;
+
 /**
  * This class represent the place which store the icons of menu
  */
 @SuppressWarnings("unused")
 public interface IconContainer {
+
+    /**
+     * Get the HashMap represent the contents are stored in this container
+     * @return HashMap contains contents
+     */
+    HashMap<Integer, Icon> getContents();
+
     /**
      * Get the icon this slot
      * @param slot Slot to get
