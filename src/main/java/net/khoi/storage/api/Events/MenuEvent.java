@@ -9,7 +9,7 @@ import org.bukkit.inventory.Inventory;
  */
 @SuppressWarnings("unused")
 public class MenuEvent extends StoragePlayerEvent {
-    private Inventory menu;
+    private final Inventory menu;
 
     /**
      * Constructor method
@@ -27,13 +27,5 @@ public class MenuEvent extends StoragePlayerEvent {
      */
     public Inventory getMenu() {
         return menu;
-    }
-
-    /**
-     * Set the target inventory menu of this event
-     * @param menu Inventory nenu to set
-     */
-    public void setMenu(Inventory menu) {
-        this.menu = menu;
     }
 }
