@@ -2,42 +2,25 @@ package net.khoi.storage.api.Events;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * This event will be called with event that cause by players
  */
 @SuppressWarnings("unused")
-public class StoragePlayerEvent extends Event implements Cancellable {
+public class StoragePlayerEvent extends PlayerEvent implements Cancellable {
     private static final HandlerList HANDLERS = new HandlerList();
     private boolean cancel;
-    private Player player;
 
     /**
      * Constructor method
      * @param player Player causes this event
      */
     public StoragePlayerEvent(Player player) {
-        this.player = player;
+        super(player);
         this.cancel = false;
-    }
-
-    /**
-     * Get the target player of this event
-     * @return Player
-     */
-    public Player getPlayer() {
-        return player;
-    }
-
-    /**
-     * Set the target player of this event
-     * @param player Player to set
-     */
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     /**

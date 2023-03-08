@@ -2,20 +2,21 @@ package net.khoi.storage.api.Events;
 
 import net.khoi.storage.api.Gui.MainGui.Menu;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 /**
  * This event will be called when player open or close menu
  */
 @SuppressWarnings("unused")
 public class MenuEvent extends StoragePlayerEvent {
-    private Menu menu;
+    private Inventory menu;
 
     /**
      * Constructor method
      * @param player Player causes this event
-     * @param menu Menu which player is interacting with
+     * @param menu Menu as Inventory which player is interacting with
      */
-    public MenuEvent(Player player, Menu menu) {
+    public MenuEvent(Player player, Inventory menu) {
         super(player);
         this.menu = menu;
     }
@@ -24,15 +25,15 @@ public class MenuEvent extends StoragePlayerEvent {
      * Get the target menu of this event
      * @return Menu
      */
-    public Menu getMenu() {
+    public Inventory getMenu() {
         return menu;
     }
 
     /**
-     * Set the target menu of this event
-     * @param menu Menu to set
+     * Set the target inventory menu of this event
+     * @param menu Inventory nenu to set
      */
-    public void setMenu(Menu menu) {
+    public void setMenu(Inventory menu) {
         this.menu = menu;
     }
 }

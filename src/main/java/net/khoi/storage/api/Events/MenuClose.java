@@ -1,7 +1,7 @@
 package net.khoi.storage.api.Events;
 
-import net.khoi.storage.api.Gui.MainGui.Menu;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 /**
  * This event will be called when player close menu
@@ -11,9 +11,9 @@ public class MenuClose extends MenuEvent {
     /**
      * Constructor method
      * @param player Player causes this event
-     * @param menu Menu will be closed
+     * @param menu Menu as inventory will be closed
      */
-    public MenuClose(Player player, Menu menu) {
+    public MenuClose(Player player, Inventory menu) {
         super(player, menu);
     }
 }
