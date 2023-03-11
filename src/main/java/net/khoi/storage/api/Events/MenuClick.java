@@ -3,6 +3,7 @@ package net.khoi.storage.api.Events;
 import net.khoi.storage.api.Gui.Action.Action;
 import net.khoi.storage.api.Gui.MainGui.Icon;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.inventory.Inventory;
 
 import java.util.List;
@@ -11,12 +12,13 @@ import java.util.List;
  * This event will be called when player click in plugin menu
  */
 @SuppressWarnings("unused")
-public class MenuClick extends StoragePlayerEvent {
+public class MenuClick extends StoragePlayerEvent implements Cancellable {
     private final Inventory menu;
     private final int slot;
     private final Icon icon;
     private final Icon.Click click;
     private List<Action> action;
+    private boolean cancel;
 
     /**
      * Constructor method
@@ -82,5 +84,22 @@ public class MenuClick extends StoragePlayerEvent {
      */
     public void setAction(List<Action> action) {
         this.action = action;
+    }
+
+    /**
+     * @return The event is cancelled or not
+     */
+    @Override
+    public boolean isCancelled() {
+        return this.cancel;
+    }
+
+    /**
+     * Set the cancel status for this event
+     * @param cancel True or false
+     */
+    @Override
+    public void setCancelled(boolean cancel) {
+        this.cancel = cancel;
     }
 }

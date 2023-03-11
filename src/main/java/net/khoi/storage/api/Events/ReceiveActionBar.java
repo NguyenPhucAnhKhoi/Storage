@@ -7,7 +7,7 @@ import org.bukkit.event.Cancellable;
  * This event will be called when player received action bar message
  */
 @SuppressWarnings("unused")
-public class ReceiveActionBar extends ReceiveMessage implements Cancellable {
+public class ReceiveActionBar extends ReceiveMessage {
     /**
      * Constructor method
      * @param receiver Player will be received message

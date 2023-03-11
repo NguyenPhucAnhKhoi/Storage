@@ -1,14 +1,16 @@
 package net.khoi.storage.api.Events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 
 /**
  * This event will be called when api and player switch status of auto mode
  */
 @SuppressWarnings("unused")
-public class SwitchAuto extends StoragePlayerEvent {
+public class SwitchAuto extends StoragePlayerEvent implements Cancellable {
     private boolean status;
     private final AutoType type;
+    private boolean cancel;
 
     /**
      * Constructor method
@@ -44,5 +46,22 @@ public class SwitchAuto extends StoragePlayerEvent {
      */
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    /**
+     * @return The event is cancelled or not
+     */
+    @Override
+    public boolean isCancelled() {
+        return this.cancel;
+    }
+
+    /**
+     * Set the cancel status for this event
+     * @param cancel True or false
+     */
+    @Override
+    public void setCancelled(boolean cancel) {
+        this.cancel = cancel;
     }
 }

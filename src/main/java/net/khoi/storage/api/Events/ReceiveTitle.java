@@ -7,7 +7,7 @@ import org.bukkit.event.Cancellable;
  * This event will be called when player received title message
  */
 @SuppressWarnings("unused")
-public class ReceiveTitle extends ReceiveMessage implements Cancellable {
+public class ReceiveTitle extends ReceiveMessage {
     /**
      * Constructor method
      * @param receiver Player will be received message

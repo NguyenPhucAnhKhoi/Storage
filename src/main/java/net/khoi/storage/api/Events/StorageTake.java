@@ -1,16 +1,18 @@
 package net.khoi.storage.api.Events;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 
 /**
  * This event will be called when api and player take resources from storage
  */
 @SuppressWarnings("unused")
-public class StorageTake extends StoragePlayerEvent {
+public class StorageTake extends StoragePlayerEvent implements Cancellable {
     private String name;
     private int amount;
     private boolean all;
     private boolean inv;
+    private boolean cancel;
 
     /**
      * Constructor method
@@ -90,5 +92,22 @@ public class StorageTake extends StoragePlayerEvent {
      */
     public void setAll(boolean all) {
         this.all = all;
+    }
+
+    /**
+     * @return The event is cancelled or not
+     */
+    @Override
+    public boolean isCancelled() {
+        return this.cancel;
+    }
+
+    /**
+     * Set the cancel status for this event
+     * @param cancel True or false
+     */
+    @Override
+    public void setCancelled(boolean cancel) {
+        this.cancel = cancel;
     }
 }
