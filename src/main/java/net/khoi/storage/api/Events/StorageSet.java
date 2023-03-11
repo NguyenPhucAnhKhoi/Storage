@@ -10,7 +10,7 @@ import org.bukkit.event.Cancellable;
 public class StorageSet extends StoragePlayerEvent implements Cancellable {
     private String name;
     private int amount;
-    private boolean max;
+    private final boolean max;
     private boolean cancel;
 
     /**
@@ -65,15 +65,6 @@ public class StorageSet extends StoragePlayerEvent implements Cancellable {
      */
     public void setAmount(int amount) {
         this.amount = amount;
-    }
-
-
-    /**
-     * Set max for storage or not
-     * @param max True or false
-     */
-    public void setAll(boolean max) {
-        this.max = max;
     }
 
     /**

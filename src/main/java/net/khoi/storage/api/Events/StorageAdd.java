@@ -10,7 +10,7 @@ import org.bukkit.event.Cancellable;
 public class StorageAdd extends StoragePlayerEvent implements Cancellable {
     private String name;
     private int amount;
-    private boolean all;
+    private final boolean all;
     private boolean inv;
     private boolean cancel;
 
@@ -84,14 +84,6 @@ public class StorageAdd extends StoragePlayerEvent implements Cancellable {
      */
     public void setInv(boolean inv) {
         this.inv = inv;
-    }
-
-    /**
-     * Add all to storage or not
-     * @param all True or false
-     */
-    public void setAll(boolean all) {
-        this.all = all;
     }
 
     /**
