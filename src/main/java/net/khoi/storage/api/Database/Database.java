@@ -1,5 +1,6 @@
 package net.khoi.storage.api.Database;
 
+import net.khoi.storage.api.Events.AutoType;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -59,6 +60,22 @@ public interface Database {
      * @return Status auto pickup
      */
     boolean getPickup(Player player);
+
+    /**
+     * Check if this database has saved material data of the player
+     * @param player Player to check
+     * @param material Material to check
+     * @return True or false
+     */
+    boolean hasData(Player player, String material);
+
+    /**
+     * Check if this database has saved auto type data of the player
+     * @param player Player to check
+     * @param autoType Type to check (Pickup or Smelt)
+     * @return True or false
+     */
+    boolean hasData(Player player, AutoType autoType);
 
     /**
      * Get the list contains all uuids store in database
