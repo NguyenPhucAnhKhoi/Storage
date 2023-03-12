@@ -12,7 +12,6 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
     private int amount;
     private final int price;
     private final boolean all;
-    private boolean inv;
     private boolean cancel;
 
     /**
@@ -22,15 +21,13 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
      * @param amount Amount of resources will be sold
      * @param price Price of resources material will be sold
      * @param all Is this event sell all or not
-     * @param inv Is this event take resources from storage to sell or not
      */
-    public StorageSell(Player player, String name, Integer amount, Integer price, Boolean all, Boolean inv) {
+    public StorageSell(Player player, String name, Integer amount, Integer price, Boolean all) {
         super(player);
         this.name = name;
         this.amount = amount;
         this.price = price;
         this.all = all;
-        this.inv = inv;
     }
 
     /**
@@ -66,14 +63,6 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
     }
 
     /**
-     * Get the status of sell inventory mode
-     * @return True or false
-     */
-    public boolean isInv() {
-        return inv;
-    }
-
-    /**
      * Set the storage name of this event
      * @param name Storage name to sell
      */
@@ -87,14 +76,6 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
      */
     public void setAmount(int amount) {
         this.amount = amount;
-    }
-
-    /**
-     * Sell by take item from player storage or not
-     * @param inv True or false
-     */
-    public void setInv(boolean inv) {
-        this.inv = inv;
     }
 
     /**
