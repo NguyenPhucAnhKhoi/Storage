@@ -10,6 +10,7 @@ import org.bukkit.event.Cancellable;
 public class StorageSell extends StoragePlayerEvent implements Cancellable {
     private String name;
     private int amount;
+    private final int price;
     private final boolean all;
     private boolean inv;
     private boolean cancel;
@@ -19,13 +20,15 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
      * @param player Player will be sold resources
      * @param name Name of storage that resources will be sold
      * @param amount Amount of resources will be sold
+     * @param price Price of resources material will be sold
      * @param all Is this event sell all or not
      * @param inv Is this event take resources from storage to sell or not
      */
-    public StorageSell(Player player, String name, Integer amount, Boolean all, Boolean inv) {
+    public StorageSell(Player player, String name, Integer amount, Integer price, Boolean all, Boolean inv) {
         super(player);
         this.name = name;
         this.amount = amount;
+        this.price = price;
         this.all = all;
         this.inv = inv;
     }
@@ -44,6 +47,14 @@ public class StorageSell extends StoragePlayerEvent implements Cancellable {
      */
     public int getAmount() {
         return amount;
+    }
+
+    /**
+     * Get the price for material of this event
+     * @return Price of material
+     */
+    public int getPrice() {
+        return price;
     }
 
     /**
