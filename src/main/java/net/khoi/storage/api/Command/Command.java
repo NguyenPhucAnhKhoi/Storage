@@ -36,7 +36,7 @@ public interface Command {
      * Get the require permissions for sender to use this command
      * Note: sender has permission storage.* can use all command
      * include this command
-     *       don't use color codes!
+     * don't use color codes!
      * @return A list of all require permissions
      */
     List<String> getPermission();

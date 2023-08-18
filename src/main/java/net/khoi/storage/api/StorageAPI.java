@@ -55,9 +55,9 @@ public interface StorageAPI {
      * Get the percent used space of this storage
      * @param player Player to get information
      * @param name Name of storage to get information
-     * @return Percent as integer
+     * @return Percent as double
      */
-    int getStoragePercent(Player player, String name);
+    double getStoragePercent(Player player, String name);
 
     /**
      * Get the amount remaining empty space of this storage
@@ -71,9 +71,9 @@ public interface StorageAPI {
      * Get the percent remaining empty space of this storage
      * @param player Player to get information
      * @param name Name of storage to get information
-     * @return Percent as integer
+     * @return Percent as double
      */
-    int getEmptyPercent(Player player, String name);
+    double getEmptyPercent(Player player, String name);
 
     /**
      * Get max amount of resources this storage can store
@@ -216,16 +216,16 @@ public interface StorageAPI {
     /**
      * Get the percent of total all storages used space
      * @param player Player to get information
-     * @return Percent as integer
+     * @return Percent as double
      */
-    int getTStoragePercent(Player player);
+    double getTStoragePercent(Player player);
 
     /**
      * Get the percent of total all storages remaining empty space
      * @param player Player to get information
-     * @return Percent as integer
+     * @return Percent as double
      */
-    int getTEmptyPercent(Player player);
+    double getTEmptyPercent(Player player);
 
     /**
      * Get auto smelt mode of this player
