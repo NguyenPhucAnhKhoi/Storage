@@ -83,10 +83,9 @@ public interface PapiItemMeta {
 
     /**
      * Enchants of this icon contains papi or not
-     * @param enchantment String enchantment to check
      * @return True or false
      */
-    boolean enchantHasPapi(String enchantment);
+    boolean enchantHasPapi();
 
     /**
      * Get List String represent enchantments of this icon

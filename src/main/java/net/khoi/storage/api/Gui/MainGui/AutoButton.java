@@ -14,8 +14,9 @@ public interface AutoButton extends Icon.Button {
         /*Ignore*/
         return null;
     }
+
     @Override
-    default void setItem(ItemStack item) {
+    default void setItem(PapiItemStack item) {
         /*Ignore*/
     }
 

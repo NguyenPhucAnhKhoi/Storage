@@ -1,5 +1,6 @@
 package net.khoi.storage.api.Gui.MainGui;
 
+import net.khoi.storage.api.Gui.PapiItemMeta;
 import net.khoi.storage.api.Gui.PapiItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -171,7 +172,7 @@ public interface Icon {
          * Set the item that icon represent
          * @param item Item to set
          */
-        void setItem(ItemStack item);
+        void setItem(PapiItemStack item);
     }
 
     /**
