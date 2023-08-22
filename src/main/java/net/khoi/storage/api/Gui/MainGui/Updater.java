@@ -20,20 +20,6 @@ public interface Updater {
     void setInterval(long interval);
 
     /**
-     * Get current status of update process
-     * <br>Note: you can't start, stop or pause update if status is false
-     * @return True or false
-     */
-    boolean getStatus();
-
-    /**
-     * Set the status of update process
-     * <br>Note: you can't start, stop or pause update if status is false
-     * @param status New status to replace
-     */
-    void setStatus(boolean status);
-
-    /**
      * Start update process if it was stopped or paused
      * <br>Note: - This update section will be stopped when player close this menu
      * <br>      - This update section won't be started if player didn't open this menu

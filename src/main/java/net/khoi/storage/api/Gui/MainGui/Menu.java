@@ -36,10 +36,10 @@ public interface Menu extends Cloneable, Iterable<Icon> {
     void setTitle(String title);
 
     /**
-     * Get the size of gui
-     * @return Size
+     * Get the rows of gui
+     * @return rows
      */
-    int getSize();
+    int getRows();
 
     /**
      * Get the Bukkit InventoryType of gui

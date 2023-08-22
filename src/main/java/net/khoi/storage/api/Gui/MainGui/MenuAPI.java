@@ -24,12 +24,12 @@ public interface MenuAPI {
     Menu loadMenu(YamlConfiguration config, MenuOptions options);
 
     /**
-     * Paste the specific menu to a config file
+     * Save the specific menu to a config file
      * @param config Config file to paste
      * @param options Options of paster
      * @param menu Menu will be pasted
      */
-    void pasteMenu(YamlConfiguration config, MenuOptions options, Menu menu);
+    void saveMenu(YamlConfiguration config, MenuOptions options, Menu menu);
 
     /**
      * Get custom default menu for all players
@@ -49,6 +49,13 @@ public interface MenuAPI {
      * @param menu Menu will be set as default
      */
     void setDefaultMenu(Menu menu);
+
+    /**
+     * Create new updater instance with custom interval
+     * @param interval The interval time between every process
+     * @return New updater was created
+     */
+    Updater createUpdater(long interval);
 
     /**
      * Create new menu instance
