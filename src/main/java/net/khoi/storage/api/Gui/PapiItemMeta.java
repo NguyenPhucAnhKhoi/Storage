@@ -95,9 +95,15 @@ public interface PapiItemMeta {
 
     /**
      * Get item flags of item that icon represent
-     * @return Item flags as string
+     * @return Item flags as list string
      */
     List<String> getItemFlags();
+
+    /**
+     * Add item flag to item that icon represent
+     * @param itemFlag Item flag as string
+     */
+    void addItemFlag(String itemFlag);
 
     /**
      * Set the item flags of item that icon represents
