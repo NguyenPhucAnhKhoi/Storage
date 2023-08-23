@@ -61,9 +61,10 @@ public interface Icon {
 
         /**
          * Executed instantly actions by this click
-         * @param click Click
+         * @param player Player who clicked this icon
+         * @param click ClickType when player clicked
          */
-        void executeAction(Click click);
+        void executeAction(Click click, Player player);
 
         /**
          * Set placeholder slot for this icon
@@ -110,6 +111,12 @@ public interface Icon {
      * Decorate icon class
      */
     interface Decorate extends Icon {
+        /**
+         * Executed instantly actions by this click
+         * @param player Player who clicked this icon
+         */
+        void executeAction(Player player);
+
         /**
          * Set the item that icon represent
          * @param item New bukkit item to set
