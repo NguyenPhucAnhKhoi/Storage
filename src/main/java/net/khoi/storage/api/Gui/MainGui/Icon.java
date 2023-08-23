@@ -1,6 +1,5 @@
 package net.khoi.storage.api.Gui.MainGui;
 
-import net.khoi.storage.api.Gui.PapiItemMeta;
 import net.khoi.storage.api.Gui.PapiItemStack;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -30,20 +29,14 @@ public interface Icon {
      */
     interface Normal extends Icon {
         /**
-         * Parse papi for this icon
-         * @param player Player to parse
-         * @return Item was parsed papi
-         */
-         ItemStack parsePapi(Player player);
-
-        /**
          * Set the item that icon represent
+         * @param item New papi item to set
          */
-         void setItem();
+         void setItem(PapiItemStack item);
 
         /**
          * Get the item that icon represent
-         * @return Bukkit item stack
+         * @return Papi item stack
          */
         PapiItemStack getItem();
 
@@ -64,7 +57,7 @@ public interface Icon {
          * Set the hashmap contains click and actions will be executed
          * @param actions Hashmap of actions and clicks
          */
-        void setAction(HashMap<Click, List<String>> actions);
+        void setActions(HashMap<Click, List<String>> actions);
 
         /**
          * Executed instantly actions by this click
@@ -101,9 +94,10 @@ public interface Icon {
 
         /**
          * @see Normal#getRawSlot()
-         * @return Slot as integer
+         * @param player Player to parse papi
+         * @return Slot as integer after parsed papi
          */
-        int getSlot();
+        int getSlot(Player player);
 
         /**
          * Get storage name this icon represent
@@ -118,8 +112,9 @@ public interface Icon {
     interface Decorate extends Icon {
         /**
          * Set the item that icon represent
+         * @param item New bukkit item to set
          */
-        void setItem();
+        void setItem(ItemStack item);
 
         /**
          * Get the item that icon represent
@@ -128,16 +123,16 @@ public interface Icon {
         ItemStack getItem();
 
         /**
-         * Set slot for this icon
-         * @param slot Slot to set
+         * Set slots for this icon
+         * @param slots Slots to set
          */
-        void setSlot(int slot);
+        void setSlot(List<Integer> slots);
 
         /**
          * Get current slot of this icon
-         * @return Slot as integer
+         * @return Slots as list integer
          */
-        int getSlot();
+        List<Integer> getSlots();
     }
 
     /**
@@ -152,9 +147,10 @@ public interface Icon {
 
         /**
          * @see Button#getRawSlot()
-         * @return Slot as integer
+         * @param player Player to parse papi
+         * @return Slot as integer after parsed api
          */
-        int getSlot();
+        int getSlot(Player player);
 
         /**
          * The hashmap contains click and actions will be execute for each click
