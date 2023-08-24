@@ -111,7 +111,6 @@ public interface Icon {
      * Decorate icon class
      */
     interface Decorate extends Icon {
-
         /**
          * Set the item that icon represent
          * @param item New bukkit item to set
@@ -164,7 +163,7 @@ public interface Icon {
          * The hashmap contains click and actions will be execute for each click
          * @return HashMap of actions and clicks
          */
-        HashMap<Click, List<String>> getActions();
+        List<String> getActions();
 
         /**
          * Get the item that icon represent
