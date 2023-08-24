@@ -111,11 +111,6 @@ public interface Icon {
      * Decorate icon class
      */
     interface Decorate extends Icon {
-        /**
-         * Executed instantly actions by this click
-         * @param player Player who clicked this icon
-         */
-        void executeAction(Player player);
 
         /**
          * Set the item that icon represent
@@ -146,6 +141,12 @@ public interface Icon {
      * Button icon class
      */
     interface Button extends Icon {
+        /**
+         * Executed instantly actions by this click
+         * @param player Player who clicked this icon
+         */
+        void executeAction(Player player);
+
         /**
          * Get current slot of this icon
          * @return Slot as string can contains placeholders
