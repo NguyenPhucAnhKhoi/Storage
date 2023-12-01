@@ -17,6 +17,7 @@ public abstract class CommandDescription {
      * Note: Length of description should be kept to a minimum
      *       Use '\n' to break lines
      *       You can use color codes
+     *
      * @param description Description of this command
      */
     public CommandDescription(String description) {
